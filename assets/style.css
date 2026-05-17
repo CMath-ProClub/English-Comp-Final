@@ -1340,8 +1340,9 @@ p {
   padding: 16px 18px;
   border: 2px solid #e2e8f0;
   display: grid;
-  gap: 10px;
-  min-height: 100%;
+  gap: 12px;
+  min-height: 120px;
+  align-items: start;
 }
 
 .myth-block {
@@ -1350,6 +1351,27 @@ p {
 
 .fact-block {
   border-left: 6px solid var(--forest);
+}
+
+.myth-block h3,
+.fact-block h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.myth-block p,
+.fact-block p {
+  margin: 0;
+  color: var(--slate);
+  font-size: 0.98rem;
+}
+
+.myth,
+.fact {
+  font-size: 0.78rem;
+  padding: 6px 10px;
 }
 
 .fact-toggle {
