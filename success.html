@@ -121,7 +121,7 @@
             <div class="card discover-wizard">
               <div class="discover-header">
                 <span class="eyebrow">Skill Questionnaire</span>
-                <strong data-discover-step-label>Question 1 of 6</strong>
+                <strong data-discover-step-label>Question 1 of 10</strong>
               </div>
 
               <div class="discover-question active" data-discover-step="1">
@@ -211,6 +211,58 @@
                 </label>
               </div>
 
+              <div class="discover-question" data-discover-step="7">
+                <p class="quiz-label">How do you prefer to learn new skills?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="learningPace">
+                    <option value="">Select one</option>
+                    <option value="fast">Fast, hands-on practice</option>
+                    <option value="steady">Step-by-step and steady practice</option>
+                    <option value="reflective">Reading and reflection</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="8">
+                <p class="quiz-label">Do you prefer working mostly indoors, outdoors, or in labs?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="environment">
+                    <option value="">Select one</option>
+                    <option value="indoors">Indoors (offices, studios)</option>
+                    <option value="outdoors">Outdoors (site, field)</option>
+                    <option value="lab">Labs or technical shops</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="9">
+                <p class="quiz-label">When solving problems, do you prefer working with data, visuals, or people?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="dataPreference">
+                    <option value="">Select one</option>
+                    <option value="data">Numbers and data</option>
+                    <option value="visual">Visuals and patterns</option>
+                    <option value="people">People and communication</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="10">
+                <p class="quiz-label">Do you prefer structured routines or flexible creative work?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="structurePreference">
+                    <option value="">Select one</option>
+                    <option value="structured">Structured routines and clear steps</option>
+                    <option value="flexible">Flexible, creative approaches</option>
+                    <option value="mix">A mix of both</option>
+                  </select>
+                </label>
+              </div>
+
               <div class="discover-nav">
                 <button type="button" class="button secondary" data-discover-prev>Back</button>
                 <button type="button" class="button" data-discover-next>Next</button>
@@ -233,6 +285,10 @@
               </div>
 
               <div class="cluster-grid">
+                <div class="card cluster-card">
+                  <h3>Sample careers</h3>
+                  <ul data-cluster-jobs></ul>
+                </div>
                 <div class="card cluster-card">
                   <h3>Typical tasks in this cluster</h3>
                   <ul data-cluster-tasks></ul>
@@ -1482,6 +1538,7 @@
         const clusterTasks = document.querySelector("[data-cluster-tasks]");
         const clusterSkills = document.querySelector("[data-cluster-skills]");
         const clusterCourses = document.querySelector("[data-cluster-courses]");
+        const clusterJobs = document.querySelector("[data-cluster-jobs]");
         const pathSummary = document.querySelector("[data-path-summary]");
         const pathProgress = document.querySelector("[data-path-progress]");
         const pathGrades = Array.from(document.querySelectorAll("[data-path-grade]"));
@@ -1492,6 +1549,7 @@
           stem: {
             title: "STEM and Engineering",
             summary: "Best match for systems thinking, data, and technical problem solving.",
+            jobs: ["Software Engineer", "Mechanical Engineer", "Data Analyst"],
             tasks: ["Model systems", "Test technical ideas", "Interpret data and patterns"],
             skills: ["Algebra and functions", "Data analysis", "Precision and logic"],
             courses: ["Pre-Calculus", "AP Calculus AB/BC", "Statistics", "Computer Science Math"],
@@ -1499,6 +1557,7 @@
           health: {
             title: "Health and Medical Services",
             summary: "Best match for evidence-based decisions and people-centered work.",
+            jobs: ["Nurse", "Public Health Specialist", "Physical Therapist"],
             tasks: ["Read health data", "Calculate dosage or risk", "Compare outcomes"],
             skills: ["Statistics", "Ratios and percentages", "Graph interpretation"],
             courses: ["Statistics", "Applied Math", "Quantitative Reasoning", "Medical Math"],
@@ -1506,6 +1565,7 @@
           business: {
             title: "Business and Finance",
             summary: "Best match for budgeting, forecasting, and strategic planning.",
+            jobs: ["Accountant", "Entrepreneur", "Financial Planner"],
             tasks: ["Build budgets", "Compare costs and benefits", "Forecast risk"],
             skills: ["Financial math", "Interest and growth", "Decision tradeoffs"],
             courses: ["Financial Math", "Statistics", "Consumer Finance", "Accounting Math"],
@@ -1513,6 +1573,7 @@
           trades: {
             title: "Trades and Technical Fields",
             summary: "Best match for hands-on precision and practical problem solving.",
+            jobs: ["Electrician", "HVAC Technician", "Construction Manager"],
             tasks: ["Measure materials", "Read blueprints", "Solve step-by-step problems"],
             skills: ["Geometry", "Unit conversion", "Applied algebra"],
             courses: ["Geometry", "Technical Math", "Algebra II", "Blueprint Math"],
@@ -1520,6 +1581,7 @@
           social: {
             title: "Social Science and Communication",
             summary: "Best match for people-focused work that uses data and clear reasoning.",
+            jobs: ["Teacher", "Lawyer", "Community Organizer"],
             tasks: ["Evaluate survey data", "Communicate evidence", "Support decisions"],
             skills: ["Data literacy", "Trend analysis", "Evidence-based argument"],
             courses: ["Statistics", "Data Literacy", "Quantitative Reasoning", "Economics Math"],
@@ -1527,6 +1589,7 @@
           creative: {
             title: "Creative and Design Fields",
             summary: "Best match for expressive work that still uses structure and math.",
+            jobs: ["UX Designer", "Marketing Strategist", "Journalist"],
             tasks: ["Design products or media", "Use audience data", "Plan projects and budgets"],
             skills: ["Scale and proportion", "Design decisions", "Project planning"],
             courses: ["Geometry", "Statistics", "Consumer Finance", "Data Literacy"],
@@ -1572,6 +1635,26 @@
             trades: { trades: 5 },
             social: { social: 5 },
             creative: { creative: 5 },
+          },
+          learningPace: {
+            fast: { trades: 3, stem: 2 },
+            steady: { business: 2, social: 2 },
+            reflective: { creative: 3, health: 1 },
+          },
+          environment: {
+            indoors: { business: 2, creative: 2, health: 1 },
+            outdoors: { trades: 4 },
+            lab: { stem: 4, trades: 1 },
+          },
+          dataPreference: {
+            data: { stem: 3, business: 2 },
+            visual: { creative: 3, trades: 1 },
+            people: { social: 3, health: 2 },
+          },
+          structurePreference: {
+            structured: { trades: 3, stem: 2 },
+            flexible: { creative: 3, social: 1 },
+            mix: { business: 2, stem: 1, creative: 1 },
           },
         };
 
@@ -1622,18 +1705,7 @@
             });
           });
 
-          courseInputs.forEach((input) => {
-            if (!input.checked) {
-              return;
-            }
-            const mapping = courseWeights[input.value];
-            if (!mapping) {
-              return;
-            }
-            Object.entries(mapping).forEach(([cluster, weight]) => {
-              scores[cluster] += weight;
-            });
-          });
+          // Course checklist does not affect cluster scoring — it's used only to mark completed courses for planning.
 
           return scores;
         };
@@ -1667,16 +1739,17 @@
               clusterTitle.textContent = "Finish the questionnaire to see your best match";
             }
             if (clusterSummary) {
-              clusterSummary.textContent = "This tool only gives a reliable recommendation after all six answers are filled in.";
+              clusterSummary.textContent = "This tool only gives a reliable recommendation after all answers are filled in.";
             }
             updateList(clusterTasks, []);
             updateList(clusterSkills, []);
             updateList(clusterCourses, []);
+            updateList(clusterJobs, []);
             return;
           }
 
           if (pathSummary) {
-            pathSummary.textContent = `${profile.title} is your best match with a ${fitScore}% fit score. ${selectedCourses} course choice(s) and all six answers support this result.`;
+            pathSummary.textContent = `${profile.title} is your best match with a ${fitScore}% fit score. ${selectedCourses} course choice(s) will be marked as complete on your plan.`;
           }
           if (clusterTitle) {
             clusterTitle.textContent = profile.title;
@@ -1688,6 +1761,7 @@
           updateList(clusterTasks, profile.tasks);
           updateList(clusterSkills, profile.skills);
           updateList(clusterCourses, profile.courses);
+          updateList(clusterJobs, profile.jobs || []);
         };
 
         const updateQuestionLabel = () => {
@@ -1748,25 +1822,32 @@
               currentStep += 1;
               renderQuestionStep();
             } else {
+              // Only compute recommendation after all questions have been answered and the user finishes the wizard
               updateRecommendation();
             }
           });
         }
 
+        // Update only the question label as users change answers; do not re-score until finish
         questionInputs.forEach((input) => {
           input.addEventListener("change", () => {
             updateQuestionLabel();
-            updateRecommendation();
           });
         });
 
+        // Course checklist updates only affect the four-year plan (marking courses done), not scoring
         courseInputs.forEach((input) => {
-          input.addEventListener("change", updateRecommendation);
+          input.addEventListener("change", () => {
+            // update UI elements that depend on completed courses if needed; nothing to do for scoring
+            if (pathSummary) {
+              const selected = courseInputs.filter((c) => c.checked).length;
+              pathSummary.textContent = `Answer ${questionInputs.length - questionInputs.filter(i=>i.value).length} more question(s) for a reliable match. ${selected} course choice(s) will be marked complete.`;
+            }
+          });
         });
 
         updateQuestionLabel();
         renderQuestionStep();
-        updateRecommendation();
         setRecoMode("discover");
       })();
     </script>
