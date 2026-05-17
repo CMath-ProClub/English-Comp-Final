@@ -72,15 +72,7 @@
                   Math is a thinking tool. Everyone uses patterns, logic, and data
                   to solve real problems.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-1"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-lewis">Why this matters</a>
                 <p id="fact-note-1" class="fact-note" hidden>
                   This matters because every field needs problem solving, not just
                   advanced formulas.
@@ -100,15 +92,7 @@
                   Year four can be statistics, financial math, or applied technical
                   courses that actually match what you want to do.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-2"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-fensterwald">Why this matters</a>
                 <p id="fact-note-2" class="fact-note" hidden>
                   This matters because the right fourth-year class should match your
                   goals, not a single track.
@@ -128,15 +112,7 @@
                   Most people use math weekly for budgeting, planning, and smart
                   decision-making.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-3"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-act">Why this matters</a>
                 <p id="fact-note-3" class="fact-note" hidden>
                   This matters because small choices like budgeting and comparing
                   plans show up all the time.
@@ -156,15 +132,7 @@
                   Math teaches reasoning, not rote memory. It builds explanation
                   and problem-solving skills you can use anywhere.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-4"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-lewis">Why this matters</a>
                 <p id="fact-note-4" class="fact-note" hidden>
                   This matters because explaining your thinking is part of almost
                   every job.
@@ -184,15 +152,7 @@
                   Math fuels creative problem solving in design, music, and
                   technology by revealing patterns and possibilities.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-5"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-lewis">Why this matters</a>
                 <p id="fact-note-5" class="fact-note" hidden>
                   This matters because creative work still depends on patterns,
                   structure, and testing ideas.
@@ -212,15 +172,7 @@
                   Math helps you compare options, spot bad deals, and make
                   everyday decisions with confidence.
                 </p>
-                <button
-                  type="button"
-                  class="fact-toggle"
-                  data-fact-toggle
-                  aria-expanded="false"
-                  aria-controls="fact-note-6"
-                >
-                  Why this matters
-                </button>
+                <a class="fact-toggle" href="persuasive-artifact.html#source-survey">Why this matters</a>
                 <p id="fact-note-6" class="fact-note" hidden>
                   This matters because everyday decisions are easier when you can
                   compare options with data.
@@ -274,18 +226,18 @@
     </footer>
 
     <script>
-      document.querySelectorAll("[data-fact-toggle]").forEach((button) => {
-        const noteId = button.getAttribute("aria-controls");
-        const note = noteId ? document.getElementById(noteId) : null;
-
-        if (!note) {
-          return;
-        }
-
-        button.addEventListener("click", () => {
-          const expanded = button.getAttribute("aria-expanded") === "true";
-          button.setAttribute("aria-expanded", String(!expanded));
+      // Preserve toggle behavior for any fact-toggle elements that control an inline note (buttons).
+      document.querySelectorAll('.fact-toggle').forEach((el) => {
+        const isAnchor = el.tagName.toLowerCase() === 'a' && el.hasAttribute('href');
+        const noteId = el.getAttribute('aria-controls');
+        if (isAnchor || !noteId) return; // anchors navigate away; buttons with aria-controls keep toggle behavior
+        const note = document.getElementById(noteId);
+        if (!note) return;
+        el.addEventListener('click', (e) => {
+          const expanded = el.getAttribute('aria-expanded') === 'true';
+          el.setAttribute('aria-expanded', String(!expanded));
           note.hidden = expanded;
+          e.preventDefault();
         });
       });
     </script>
