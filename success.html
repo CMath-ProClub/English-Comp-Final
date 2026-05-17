@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career & Success | Four Years of Math</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://www.geogebra.org/scripts/deployggb.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <div class="brand">Four Years of Mathematical Education</div>
+        <div class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="students.html">Info</a>
+          <a href="success.html" aria-current="page">Success</a>
+          <a href="persuasive-artifact.html">Why It Matters</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="main">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Career & Success</div>
+          <h1>Find Career Clusters That Fit You.</h1>
+          <p>
+            Select the math courses you already took, then answer a short
+            questionnaire. We will suggest a career cluster, the tasks in that
+            field, math skills it uses, and classes that align with your goals.
+          </p>
+        </div>
+        <div class="card path-summary">
+          <h3>Recommendation Snapshot</h3>
+          <p data-path-summary>
+            Complete the questionnaire to unlock your top cluster match.
+          </p>
+          <div class="meter-bar" aria-hidden="true">
+            <div class="meter-fill" data-path-progress></div>
+          </div>
+          <div class="stat">
+            <strong data-path-grade>0</strong>
+            <span>fit score</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="card flow-builder">
+          <div class="flow-header">
+            <div>
+              <span class="eyebrow">Career Quiz</span>
+              <h2>Take a short questionnaire and get targeted suggestions.</h2>
+              <p>
+                This is not a four-year timeline. It is a fit tool that connects
+                your interests and current math background to likely career clusters.
+              </p>
+            </div>
+            <div class="flow-chip">
+              <span>What you get</span>
+              <strong>Cluster match, job tasks, skills, and class suggestions</strong>
+            </div>
+          </div>
+
+          <div class="flow-controls">
+            <div>
+              <h3>Choose your experience</h3>
+              <div class="toggle-group" role="tablist">
+                <button type="button" class="active" data-reco-mode="discover">Discover my pathway</button>
+                <button type="button" data-reco-mode="prebuilt">Explore prebuilt ones</button>
+              </div>
+            </div>
+          </div>
+
+          <div data-mode-panel="discover">
+            <div>
+              <h3>What math courses have you already taken?</h3>
+              <p style="color: var(--slate); font-size: 0.9rem; margin-bottom: 12px;">Select all that apply. Leave blank if you haven't taken any high school math yet.</p>
+              <div class="course-checklist" role="list">
+                <label class="course-check">
+                  <input type="checkbox" value="algebra1" data-pathway-course />
+                  <span>Algebra I</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="geometry" data-pathway-course />
+                  <span>Geometry</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="algebra2" data-pathway-course />
+                  <span>Algebra II</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="precalc" data-pathway-course />
+                  <span>Pre-Calculus</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="stats" data-pathway-course />
+                  <span>Statistics</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="apcalcab" data-pathway-course />
+                  <span>AP Calculus AB</span>
+                </label>
+                <label class="course-check">
+                  <input type="checkbox" value="apcalcbc" data-pathway-course />
+                  <span>AP Calculus BC</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="card discover-wizard">
+              <div class="discover-header">
+                <span class="eyebrow">Skill Questionnaire</span>
+                <strong data-discover-step-label>Question 1 of 6</strong>
+              </div>
+
+              <div class="discover-question active" data-discover-step="1">
+                <p class="quiz-label">If you could spend a day doing one kind of work, what sounds best?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="workStyle">
+                    <option value="">Select one</option>
+                    <option value="trades">Build or repair something practical</option>
+                    <option value="stem">Analyze data, formulas, or systems</option>
+                    <option value="health">Help people directly and solve care problems</option>
+                    <option value="creative">Design, write, or make something original</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="2">
+                <p class="quiz-label">When something is tricky, what do you reach for first?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="solveStyle">
+                    <option value="">Select one</option>
+                    <option value="stem">Numbers, formulas, and patterns</option>
+                    <option value="trades">Tools, measurements, and hands-on testing</option>
+                    <option value="social">People skills, discussion, and communication</option>
+                    <option value="business">Budgets, planning, and decision tradeoffs</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="3">
+                <p class="quiz-label">Which class or project feels strongest for you?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="classStrength">
+                    <option value="">Select one</option>
+                    <option value="stem">Algebra, coding, or science problem solving</option>
+                    <option value="health">Statistics, research, or evidence reading</option>
+                    <option value="trades">Geometry, shop, or measurement work</option>
+                    <option value="creative">Art, writing, design, or presentations</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="4">
+                <p class="quiz-label">If you joined a team, what role would you want?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="teamRole">
+                    <option value="">Select one</option>
+                    <option value="business">The planner who organizes the work</option>
+                    <option value="trades">The builder who fixes or makes things</option>
+                    <option value="health">The helper who supports people</option>
+                    <option value="creative">The designer who presents ideas clearly</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="5">
+                <p class="quiz-label">Which project would you rather lead?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="projectType">
+                    <option value="">Select one</option>
+                    <option value="stem">Building an app, robot, or model</option>
+                    <option value="business">Planning a budget or starting a small business</option>
+                    <option value="health">Improving a health or wellness project</option>
+                    <option value="trades">Building or repairing something with tools</option>
+                    <option value="social">Running a survey, campaign, or community project</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-question" data-discover-step="6">
+                <p class="quiz-label">What future job sounds most like you?</p>
+                <label class="question-select">
+                  <span>Choose one answer</span>
+                  <select data-question-answer="futureGoal">
+                    <option value="">Select one</option>
+                    <option value="stem">Engineer, programmer, or researcher</option>
+                    <option value="health">Nurse, therapist, or public health worker</option>
+                    <option value="business">Entrepreneur, analyst, or finance worker</option>
+                    <option value="trades">Electrician, mechanic, or carpenter</option>
+                    <option value="social">Teacher, lawyer, or community organizer</option>
+                    <option value="creative">Designer, artist, or content creator</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="discover-nav">
+                <button type="button" class="button secondary" data-discover-prev>Back</button>
+                <button type="button" class="button" data-discover-next>Next</button>
+              </div>
+            </div>
+
+            <div class="cluster-layout">
+              <div class="flow-outcome">
+                <div>
+                  <span class="eyebrow">Top cluster match</span>
+                  <h3 data-cluster-title>Complete the questionnaire to see your result</h3>
+                  <p data-cluster-summary>
+                    We combine your open-ended responses and completed math courses.
+                  </p>
+                </div>
+                <div class="flow-badge">
+                  <strong data-path-grade>0</strong>
+                  <span>fit score</span>
+                </div>
+              </div>
+
+              <div class="cluster-grid">
+                <div class="card cluster-card">
+                  <h3>Typical tasks in this cluster</h3>
+                  <ul data-cluster-tasks></ul>
+                </div>
+                <div class="card cluster-card">
+                  <h3>Math skills used most</h3>
+                  <ul data-cluster-skills></ul>
+                </div>
+                <div class="card cluster-card">
+                  <h3>Suggested classes that align</h3>
+                  <ul data-cluster-courses></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-mode-panel="prebuilt" hidden>
+            <div class="cluster-grid">
+              <div class="card cluster-card">
+                <h3>STEM / Engineering</h3>
+                <p><strong>Sample careers:</strong> Software Engineer, Mechanical Engineer, Data Analyst</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Pre-Calculus, AP Calculus AB/BC, Statistics</p>
+                <ul>
+                  <li>Grade 9: Algebra I or Geometry</li>
+                  <li>Grade 10: Geometry or Algebra II</li>
+                  <li>Grade 11: Pre-Calculus or Statistics</li>
+                  <li>Grade 12: AP Calculus, AP Statistics, or Linear Algebra if offered</li>
+                </ul>
+              </div>
+
+              <div class="card cluster-card">
+                <h3>Health / Medical</h3>
+                <p><strong>Sample careers:</strong> Nurse, Public Health Specialist, Physical Therapist</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Statistics, Quantitative Reasoning, Medical Math</p>
+                <ul>
+                  <li>Grade 9: Algebra I or Geometry</li>
+                  <li>Grade 10: Geometry or Algebra II</li>
+                  <li>Grade 11: Statistics</li>
+                  <li>Grade 12: Quantitative Reasoning or Medical Math</li>
+                </ul>
+              </div>
+
+              <div class="card cluster-card">
+                <h3>Business / Finance</h3>
+                <p><strong>Sample careers:</strong> Accountant, Entrepreneur, Financial Planner</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Financial Math, Statistics, Consumer Finance</p>
+                <ul>
+                  <li>Grade 9: Algebra I</li>
+                  <li>Grade 10: Geometry</li>
+                  <li>Grade 11: Algebra II</li>
+                  <li>Grade 12: Financial Math or Statistics</li>
+                </ul>
+              </div>
+
+              <div class="card cluster-card">
+                <h3>Trades / Technical</h3>
+                <p><strong>Sample careers:</strong> Electrician, HVAC Technician, Construction Manager</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Technical Math, Blueprint Math, Applied Problem Solving</p>
+                <ul>
+                  <li>Grade 9: Algebra I</li>
+                  <li>Grade 10: Geometry</li>
+                  <li>Grade 11: Technical Math</li>
+                  <li>Grade 12: Blueprint Math or Applied Problem Solving</li>
+                </ul>
+              </div>
+
+              <div class="card cluster-card">
+                <h3>Creative / Communication</h3>
+                <p><strong>Sample careers:</strong> UX Designer, Marketing Strategist, Journalist</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Statistics, Data Literacy, Consumer Finance</p>
+                <ul>
+                  <li>Grade 9: Algebra I</li>
+                  <li>Grade 10: Geometry</li>
+                  <li>Grade 11: Statistics</li>
+                  <li>Grade 12: Data Literacy or Consumer Finance</li>
+                </ul>
+              </div>
+
+              <div class="card cluster-card">
+                <h3>Social Science / Communication</h3>
+                <p><strong>Sample careers:</strong> Teacher, Lawyer, Community Organizer</p>
+                <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
+                <p><strong>Math electives:</strong> Statistics, Data Literacy, Quantitative Reasoning</p>
+                <ul>
+                  <li>Grade 9: Algebra I</li>
+                  <li>Grade 10: Geometry</li>
+                  <li>Grade 11: Statistics or Data Literacy</li>
+                  <li>Grade 12: Quantitative Reasoning or Consumer Finance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card app-demo">
+          <span class="eyebrow">Math Playground</span>
+          <h2>Tap a situation to see the math behind everyday life.</h2>
+          <p>
+            These are everyday applications people actually run into: shopping, travel, cooking, bills, sports, health, building things, and making digital stuff.
+          </p>
+
+          <div class="app-demo-grid" role="tablist" aria-label="Math playground applications">
+            <button type="button" class="app-demo-button active" data-playground-demo="shopping">Shopping & budgeting</button>
+            <button type="button" class="app-demo-button" data-playground-demo="sports">Sports stats</button>
+            <button type="button" class="app-demo-button" data-playground-demo="building">Building & measuring</button>
+            <button type="button" class="app-demo-button" data-playground-demo="health">Health & care</button>
+            <button type="button" class="app-demo-button" data-playground-demo="apps">Apps & games</button>
+            <button type="button" class="app-demo-button" data-playground-demo="travel">Travel & timing</button>
+            <button type="button" class="app-demo-button" data-playground-demo="cooking">Cooking & recipes</button>
+            <button type="button" class="app-demo-button" data-playground-demo="bills">Bills & subscriptions</button>
+            <button type="button" class="app-demo-button" data-playground-demo="investment">Investment & growth</button>
+          </div>
+
+          <div class="app-demo-panel" aria-live="polite" data-playground-body></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container callout">
+        <h2>Why the fourth year matters</h2>
+        <div class="split-card">
+          <div class="split-item">
+            <h3>Debt grows fast</h3>
+            <p>
+              Math helps students see how quickly debt can grow when interest is
+              ignored.
+            </p>
+          </div>
+          <div class="split-item">
+            <h3>Investing grows too</h3>
+            <p>
+              The same logic also shows why early investing and smart planning
+              create real long-term payoff.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        Career growth starts with a foundation of math.
+      </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+    <script>
+      (function () {
+        const buttons = Array.from(document.querySelectorAll("[data-playground-demo]"));
+        const body = document.querySelector("[data-playground-body]");
+
+        if (!buttons.length || !body) {
+          return;
+        }
+
+        const money = (value) =>
+          `$${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+
+        const groceryCatalog = [
+          {
+            id: "milk",
+            name: "Milk",
+            options: [
+              { brand: "Store Brand", price: 3.29 },
+              { brand: "MeadowFresh", price: 4.19 },
+              { brand: "Organic Valley", price: 5.49 },
+            ],
+          },
+          {
+            id: "bread",
+            name: "Bread",
+            options: [
+              { brand: "Store Brand", price: 2.29 },
+              { brand: "Hearth Grain", price: 3.49 },
+              { brand: "Premium Baker", price: 4.59 },
+            ],
+          },
+          {
+            id: "eggs",
+            name: "Eggs",
+            options: [
+              { brand: "Store Brand", price: 3.89 },
+              { brand: "Farm Fresh", price: 4.99 },
+              { brand: "Cage-Free Choice", price: 5.79 },
+            ],
+          },
+          {
+            id: "cereal",
+            name: "Cereal",
+            options: [
+              { brand: "Store Brand", price: 3.59 },
+              { brand: "Bran Boost", price: 4.29 },
+              { brand: "Family Crunch", price: 5.19 },
+            ],
+          },
+          {
+            id: "apples",
+            name: "Apples per lb",
+            options: [
+              { brand: "Store Brand", price: 1.99 },
+              { brand: "Orchard Select", price: 2.49 },
+              { brand: "Premium Crisp", price: 2.99 },
+            ],
+          },
+          {
+            id: "chicken",
+            name: "Chicken per lb",
+            options: [
+              { brand: "Store Brand", price: 5.99 },
+              { brand: "Farm Raised", price: 6.99 },
+              { brand: "Premium Butcher", price: 8.49 },
+            ],
+          },
+        ];
+
+        const sportsProfiles = {
+          basketball: {
+            athlete: "LeBron James",
+            statLabel: "career points",
+            statInputLabel: "Your points",
+            statValue: "40,000+",
+            gamesLabel: "career games",
+            gamesValue: "1,500+",
+            benchmark: 27.1,
+            benchmarkLabel: "points per game",
+            note: "A long career with elite scoring, rebounding, and playmaking.",
+          },
+          football: {
+            athlete: "Tom Brady",
+            statLabel: "career passing yards",
+            statInputLabel: "Your passing yards",
+            statValue: "89,214",
+            gamesLabel: "career games",
+            gamesValue: "335",
+            benchmark: 266.31,
+            benchmarkLabel: "passing yards per game",
+            note: "A record-setting quarterback with huge passing totals and 7 Super Bowl wins.",
+          },
+          soccer: {
+            athlete: "Lionel Messi",
+            statLabel: "career goals",
+            statInputLabel: "Your goals",
+            statValue: "800+",
+            gamesLabel: "career matches",
+            gamesValue: "1,000+",
+            benchmark: 0.79,
+            benchmarkLabel: "goals per match",
+            note: "An all-time scorer known for goals, assists, and chance creation.",
+          },
+          baseball: {
+            athlete: "Derek Jeter",
+            statLabel: "career hits",
+            statInputLabel: "Your hits",
+            statValue: "3,465",
+            gamesLabel: "career games",
+            gamesValue: "2,747",
+            benchmark: 1.26,
+            benchmarkLabel: "hits per game",
+            note: "A Hall of Fame shortstop with a long, steady hitting career.",
+          },
+        };
+
+        const geometrySolveModes = {
+          rectangle: [
+            { value: "area", label: "Solve area" },
+            { value: "perimeter", label: "Solve perimeter" },
+            { value: "side", label: "Solve missing side" },
+          ],
+          square: [
+            { value: "area", label: "Solve area" },
+            { value: "perimeter", label: "Solve perimeter" },
+            { value: "side", label: "Solve side length" },
+          ],
+          circle: [
+            { value: "area", label: "Solve area" },
+            { value: "circumference", label: "Solve circumference" },
+            { value: "radius", label: "Solve radius" },
+          ],
+          triangle: [
+            { value: "area", label: "Solve area" },
+            { value: "angle", label: "Solve missing angle" },
+            { value: "side", label: "Solve missing side" },
+          ],
+        };
+
+        const geometryPreviewTemplates = {
+          rectangle: `
+            <div class="shape-preview shape-rectangle">
+              <label class="shape-control shape-top">
+                <span>Length</span>
+                <input type="number" min="0" step="0.1" value="12" data-geo-length />
+              </label>
+              <label class="shape-control shape-left">
+                <span>Width</span>
+                <input type="number" min="0" step="0.1" value="9" data-geo-width />
+              </label>
+            </div>
+          `,
+          square: `
+            <div class="shape-preview shape-square">
+              <label class="shape-control shape-top">
+                <span>Side</span>
+                <input type="number" min="0" step="0.1" value="10" data-geo-side />
+              </label>
+            </div>
+          `,
+          circle: `
+            <div class="shape-preview shape-circle">
+              <label class="shape-control shape-center">
+                <span>Radius</span>
+                <input type="number" min="0" step="0.1" value="6" data-geo-radius />
+              </label>
+            </div>
+          `,
+          triangle: `
+            <div class="shape-preview shape-triangle">
+              <label class="shape-control shape-angle-a">
+                <span>Angle A</span>
+                <input type="number" min="0" step="1" value="60" data-geo-angle-a />
+              </label>
+              <label class="shape-control shape-angle-b">
+                <span>Angle B</span>
+                <input type="number" min="0" step="1" value="60" data-geo-angle-b />
+              </label>
+              <label class="shape-control shape-angle-c">
+                <span>Angle C</span>
+                <input type="number" min="0" step="1" value="60" data-geo-angle-c />
+              </label>
+              <label class="shape-control shape-side-a">
+                <span>Side A</span>
+                <input type="number" min="0" step="0.1" value="10" data-geo-side-a />
+              </label>
+              <label class="shape-control shape-side-b">
+                <span>Side B</span>
+                <input type="number" min="0" step="0.1" value="8" data-geo-side-b />
+              </label>
+              <label class="shape-control shape-base">
+                <span>Side C</span>
+                <input type="number" min="0" step="0.1" value="6" data-geo-side-c />
+              </label>
+            </div>
+          `,
+        };
+
+        const appGameModes = {
+          screen: {
+            label: "Screen time",
+            fields: `
+              <div class="calc-grid">
+                <label>Minutes per day<input type="number" min="0" max="1440" step="1" value="90" data-apps-minutes /></label>
+                <label>Days per week<input type="number" min="0" max="7" step="1" value="5" data-apps-days /></label>
+              </div>
+            `,
+          },
+          games: {
+            label: "Win rate",
+            fields: `
+              <div class="calc-grid">
+                <label>Wins<input type="number" min="0" step="1" value="18" data-apps-wins /></label>
+                <label>Games played<input type="number" min="1" step="1" value="30" data-apps-played /></label>
+                <label>Games left<input type="number" min="0" step="1" value="6" data-apps-left /></label>
+              </div>
+            `,
+          },
+          xp: {
+            label: "XP pace",
+            fields: `
+              <div class="calc-grid">
+                <label>XP earned<input type="number" min="0" step="1" value="1250" data-apps-xp /></label>
+                <label>Sessions completed<input type="number" min="1" step="1" value="10" data-apps-sessions /></label>
+                <label>Sessions left<input type="number" min="0" step="1" value="4" data-apps-xp-left /></label>
+              </div>
+            `,
+          },
+        };
+
+        const travelModes = {
+          road: {
+            label: "Road trip",
+            fields: `
+              <div class="calc-grid">
+                <label>Distance (miles)<input type="number" min="0" step="0.1" value="120" data-travel-distance /></label>
+                <label>Average speed (mph)<input type="number" min="1" step="0.1" value="60" data-travel-speed /></label>
+                <label>Stop time (minutes)<input type="number" min="0" step="1" value="20" data-travel-stops /></label>
+              </div>
+            `,
+          },
+          flight: {
+            label: "Flight comparison",
+            fields: `
+              <div class="calc-grid">
+                <label>Flight 1 base fare ($)<input type="number" min="0" step="0.01" value="180" data-flight1-fare /></label>
+                <label>Carry-ons<input type="number" min="0" step="1" value="1" data-flight1-bags /></label>
+                <label>Layover minutes<input type="number" min="0" step="1" value="45" data-flight1-layover /></label>
+                <label>Flight 2 base fare ($)<input type="number" min="0" step="0.01" value="155" data-flight2-fare /></label>
+                <label>Carry-ons<input type="number" min="0" step="1" value="2" data-flight2-bags /></label>
+                <label>Layover minutes<input type="number" min="0" step="1" value="90" data-flight2-layover /></label>
+                <label>Carry-on fee ($)<input type="number" min="0" step="0.01" value="35" data-flight-bag-fee /></label>
+                <label>Flight distance (miles)<input type="number" min="0" step="1" value="900" data-flight-distance /></label>
+                <label>Cruise speed (mph)<input type="number" min="1" step="1" value="500" data-flight-speed /></label>
+              </div>
+            `,
+          },
+          hotel: {
+            label: "Hotel comparison",
+            fields: `
+              <div class="calc-grid">
+                <label>Hotel A nightly rate ($)<input type="number" min="0" step="0.01" value="145" data-hotel-a-rate /></label>
+                <label>Hotel A fees ($)<input type="number" min="0" step="0.01" value="22" data-hotel-a-fees /></label>
+                <label>Hotel B nightly rate ($)<input type="number" min="0" step="0.01" value="132" data-hotel-b-rate /></label>
+                <label>Hotel B fees ($)<input type="number" min="0" step="0.01" value="34" data-hotel-b-fees /></label>
+                <label>Nights<input type="number" min="1" step="1" value="3" data-hotel-nights /></label>
+              </div>
+            `,
+          },
+          currency: {
+            label: "Currency conversion",
+            fields: `
+              <div class="calc-grid">
+                <label>Amount<input type="number" min="0" step="0.01" value="100" data-currency-amount /></label>
+                <label>Rate (target per 1 source)<input type="number" min="0" step="0.0001" value="0.92" data-currency-rate /></label>
+                <label>Fee ($)<input type="number" min="0" step="0.01" value="3.50" data-currency-fee /></label>
+              </div>
+            `,
+          },
+        };
+
+        const cookingModes = {
+          scale: {
+            label: "Scale recipe",
+            fields: `
+              <div class="calc-grid">
+                <label>Original servings<input type="number" min="1" value="4" data-cooking-original /></label>
+                <label>Target servings<input type="number" min="1" value="6" data-cooking-target /></label>
+                <label>Flour (cups)<input type="number" min="0" step="0.25" value="2" data-cooking-flour /></label>
+                <label>Milk (cups)<input type="number" min="0" step="0.25" value="1.5" data-cooking-milk /></label>
+                <label>Sugar (cups)<input type="number" min="0" step="0.25" value="0.5" data-cooking-sugar /></label>
+              </div>
+            `,
+          },
+          convert: {
+            label: "Convert units",
+            fields: `
+              <div class="calc-grid">
+                <label>Cups<input type="number" min="0" step="0.1" value="2" data-cooking-cups /></label>
+                <label>Tablespoons per cup<input type="number" min="1" step="1" value="16" data-cooking-tbsp-per-cup /></label>
+                <label>Teaspoons per tablespoon<input type="number" min="1" step="1" value="3" data-cooking-tsp-per-tbsp /></label>
+              </div>
+            `,
+          },
+          temperature: {
+            label: "Temperature",
+            fields: `
+              <div class="calc-grid">
+                <label>Celsius<input type="number" step="0.1" value="180" data-cooking-celsius /></label>
+                <label>Fahrenheit<input type="number" step="0.1" value="356" data-cooking-fahrenheit /></label>
+              </div>
+            `,
+          },
+        };
+
+        const billModes = {
+          subscriptions: {
+            label: "Subscriptions",
+            fields: `
+              <div class="subscription-list">
+                <label class="subscription-row"><span>Streaming</span><input type="number" min="0" step="0.01" value="14.99" data-subscription-1 /></label>
+                <label class="subscription-row"><span>Music</span><input type="number" min="0" step="0.01" value="10.99" data-subscription-2 /></label>
+                <label class="subscription-row"><span>Cloud storage</span><input type="number" min="0" step="0.01" value="6.99" data-subscription-3 /></label>
+                <label class="subscription-row"><span>Fitness app</span><input type="number" min="0" step="0.01" value="12.50" data-subscription-4 /></label>
+              </div>
+            `,
+          },
+          debt: {
+            label: "Credit card debt",
+            fields: `
+              <div class="calc-grid">
+                <label>Balance ($)<input type="number" min="0" step="0.01" value="2500" data-debt-balance /></label>
+                <label>APR (%)<input type="number" min="0" step="0.01" value="24" data-debt-apr /></label>
+                <label>Minimum payment ($)<input type="number" min="0" step="0.01" value="75" data-debt-min /></label>
+                <label>Extra payment ($)<input type="number" min="0" step="0.01" value="25" data-debt-extra /></label>
+              </div>
+            `,
+          },
+        };
+
+        const investmentModes = {
+          basic: {
+            label: "Basic growth",
+            fields: `
+              <div class="calc-grid">
+                <label>Starting amount ($)<input type="number" min="0" value="500" data-invest-principal /></label>
+                <label>Monthly contribution ($)<input type="number" min="0" value="100" data-invest-contribution /></label>
+                <label>Annual rate (%)<input type="number" min="0" step="0.1" value="6" data-invest-rate /></label>
+                <label>Years<input type="number" min="0" value="10" data-invest-years /></label>
+              </div>
+            `,
+          },
+          sharpe: {
+            label: "Sharpe ratio",
+            fields: `
+              <div class="calc-grid">
+                <label>Expected return (%)<input type="number" step="0.1" value="9" data-invest-return /></label>
+                <label>Risk-free rate (%)<input type="number" step="0.1" value="4" data-invest-riskfree /></label>
+                <label>Volatility (%)<input type="number" min="0.1" step="0.1" value="15" data-invest-volatility /></label>
+              </div>
+            `,
+          },
+          dividends: {
+            label: "Dividends",
+            fields: `
+              <div class="calc-grid">
+                <label>Investment ($)<input type="number" min="0" step="0.01" value="5000" data-div-investment /></label>
+                <label>Annual growth (%)<input type="number" step="0.1" value="7" data-div-growth /></label>
+                <label>Dividend yield (%)<input type="number" step="0.1" value="2" data-div-yield /></label>
+                <label>Years<input type="number" min="0" step="1" value="10" data-div-years /></label>
+              </div>
+            `,
+          },
+        };
+
+        const renderModeMarkup = (root, containerSelector, modeMap, modeValue, selectorName) => {
+          const container = root.querySelector(containerSelector);
+          const selector = root.querySelector(selectorName);
+          const mode = modeMap[modeValue] || Object.values(modeMap)[0];
+          if (selector) {
+            selector.innerHTML = Object.entries(modeMap)
+              .map(([value, item]) => `<option value="${value}">${item.label}</option>`)
+              .join("");
+            selector.value = modeValue in modeMap ? modeValue : Object.keys(modeMap)[0];
+          }
+          if (container && container.dataset.currentMode !== selector.value) {
+            container.innerHTML = mode.fields;
+            container.dataset.currentMode = selector.value;
+          }
+          return mode;
+        };
+
+        const readNumber = (root, selector, fallback = 0) => Number(root.querySelector(selector)?.value) || fallback;
+
+        const renderShoppingAisle = (root) => {
+          const aisle = root.querySelector("[data-shopping-aisle]");
+          if (!aisle || aisle.dataset.rendered === "true") {
+            return;
+          }
+
+          aisle.innerHTML = groceryCatalog
+            .map(
+              (item) => `
+                <div class="grocery-item">
+                  <div class="grocery-header">
+                    <strong>${item.name}</strong>
+                    <span>Pick a brand and quantity</span>
+                  </div>
+                  <div class="calc-grid grocery-grid">
+                    <label>Brand
+                      <select data-grocery-brand="${item.id}">
+                        ${item.options
+                          .map(
+                            (option, index) => `<option value="${index}">${option.brand} - ${money(option.price)}</option>`
+                          )
+                          .join("")}
+                      </select>
+                    </label>
+                    <label>Qty
+                      <input type="number" min="0" step="1" value="1" data-grocery-qty="${item.id}" />
+                    </label>
+                  </div>
+                </div>
+              `
+            )
+            .join("");
+
+          aisle.dataset.rendered = "true";
+        };
+
+        const renderSportsProfile = (root, sport) => {
+          const profile = sportsProfiles[sport] || sportsProfiles.basketball;
+          const profileBox = root.querySelector("[data-sports-athlete]");
+          const totalLabel = root.querySelector("[data-sports-total-label]");
+          const totalInput = root.querySelector("[data-sports-total]");
+          if (!profileBox) {
+            return;
+          }
+
+          if (totalLabel) {
+            const labelText = totalLabel.querySelector("[data-sports-total-label-text]");
+            if (labelText) {
+              labelText.textContent = profile.statInputLabel;
+            }
+          }
+          if (totalInput) {
+            totalInput.setAttribute("aria-label", profile.statInputLabel);
+            totalInput.title = profile.statInputLabel;
+          }
+
+          profileBox.innerHTML = `
+            <div class="grocery-item">
+              <div class="grocery-header">
+                <strong>${profile.athlete}</strong>
+                <span>${profile.note}</span>
+              </div>
+              <div class="stat-strip">
+                <div><strong>${profile.statValue}</strong><span>${profile.statLabel}</span></div>
+                <div><strong>${profile.gamesValue}</strong><span>${profile.gamesLabel}</span></div>
+                <div><strong>${profile.benchmark.toFixed(2)}</strong><span>${profile.benchmarkLabel}</span></div>
+              </div>
+            </div>
+          `;
+        };
+
+        const renderGeometryFields = (root, shape) => {
+          const fields = root.querySelector("[data-geometry-fields]");
+          const preview = root.querySelector("[data-geometry-preview]");
+          const formula = root.querySelector("[data-geometry-formula]");
+          const resultText = root.querySelector("[data-geometry-result-text]");
+          if (!fields || !preview) {
+            return;
+          }
+
+          const currentKey = `${shape}`;
+          if (fields.dataset.geometryCurrent !== currentKey) {
+            fields.innerHTML = `<p class="geometry-help">Use GeoGebra's Point, Segment, Polygon, Angle, and Circle tools to draw a shape, then click or type measurements to check side lengths, angles, area, and circumference.</p>`;
+            fields.dataset.geometryCurrent = currentKey;
+
+            // Initialize GeoGebra applet
+            initGeoGebraApplet(preview);
+          }
+
+          if (formula) {
+            const formulaMap = {
+              rectangle: "Rectangle: use length and width, then check area and perimeter with GeoGebra measurements.",
+              square: "Square: use one side length, then check area, perimeter, and diagonal if needed.",
+              circle: "Circle: use radius or diameter, then check area, circumference, and sector measures.",
+              triangle: "Triangle: measure the three sides, the three angles, and the area from the built shape.",
+            };
+            formula.textContent = formulaMap[shape] || "Choose a shape.";
+          }
+
+          if (resultText) {
+            const labels = {
+              rectangle: "Rectangle — build one and measure sides, angles, and area",
+              square: "Square — build one and measure side length and area",
+              circle: "Circle — build one and measure radius, circumference, and area",
+              triangle: "Triangle — build one and measure sides, angles, and area",
+            };
+            resultText.textContent = labels[shape] || "Geometry selected.";
+          }
+        };
+
+        const initGeoGebraApplet = (container) => {
+          container.innerHTML = '';
+
+          const appletId = `ggb-geometry-${Date.now()}`;
+          container.id = appletId;
+
+          const params = {
+            appName: 'geometry',
+            id: appletId,
+            width: 500,
+            height: 400,
+            showToolbar: true,
+            showMenuBar: false,
+            showAlgebraInput: true,
+            enableLabelDrags: true,
+            enableShiftDragZoom: true,
+            useBrowserForJS: true,
+            perspective: 'geometry',
+            showResetIcon: true,
+          };
+
+          const applet = new GGBApplet(params, true);
+          applet.inject(appletId);
+        };
+
+        const existingModesIncludes = (modes, value) => modes.includes(value);
+
+        const getNumber = (root, selector) => Number(root.querySelector(selector)?.value) || 0;
+
+        const widgets = {
+          shopping: `
+            <div class="playground-widget">
+              <h3>Shopping & budgeting</h3>
+              <p>Fill the cart, beat the budget line, and learn how brand swaps change the total.</p>
+              <div class="calc-grid">
+                <label>Budget ($)<input type="number" min="0" value="75" data-shop-budget /></label>
+                <label>Weekly shoppers<input type="number" min="1" value="4" data-shop-shoppers /></label>
+              </div>
+              <div class="budget-meter" aria-hidden="true"><div class="budget-meter-fill" data-shop-meter></div></div>
+              <div class="budget-summary" data-shop-summary></div>
+              <div class="grocery-aisle" data-shopping-aisle></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          sports: `
+            <div class="playground-widget">
+              <h3>Sports stats</h3>
+              <p>Choose a sport, see a real athlete reference, and compare your pace to pro-level averages.</p>
+              <div class="calc-grid">
+                <label>Sport
+                  <select data-sports-sport>
+                    <option value="basketball">Basketball</option>
+                    <option value="football">Football</option>
+                    <option value="soccer">Soccer</option>
+                    <option value="baseball">Baseball</option>
+                  </select>
+                </label>
+                <label data-sports-total-label><span data-sports-total-label-text>Your stat total</span><input type="text" inputmode="numeric" pattern="[0-9,]*" placeholder="example: 89,214" value="96" data-sports-total /></label>
+                <label>Games / matches played<input type="number" min="1" value="8" data-sports-played /></label>
+                <label>Games / matches left<input type="number" min="0" value="4" data-sports-left /></label>
+              </div>
+              <div data-sports-athlete></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          building: `
+            <div class="playground-widget">
+              <h3>Building & measuring</h3>
+              <p>Pick a shape and interact with it. See calculations update in real-time.</p>
+              <div class="geometry-shell">
+                <div class="geometry-toolbar">
+                  <div>
+                    <strong>GeoGebra Geometry</strong>
+                    <p class="geometry-note">Interactive geometry powered by GeoGebra.</p>
+                  </div>
+                  <a class="geometry-reference" href="https://www.geogebra.org/geometry" target="_blank" rel="noreferrer">Learn more</a>
+                </div>
+                <div class="geometry-formula" data-geometry-formula>Formula will appear here.</div>
+                  <div class="geometry-layout">
+                  <div class="geometry-preview-frame" id="ggb-applet" data-geometry-preview aria-label="Interactive geometry applet"></div>
+                  <div class="calc-grid geometry-controls">
+                    <label>Shape
+                      <select data-geometry-shape>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="square">Square</option>
+                        <option value="circle">Circle</option>
+                        <option value="triangle">Triangle</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+                <div class="geometry-result" data-geometry-result-text>Choose a shape and interact with it.</div>
+                <div data-geometry-fields></div>
+                <div class="calc-output" data-playground-output></div>
+              </div>
+            </div>
+          `,
+          health: `
+            <div class="playground-widget">
+              <h3>Health & care</h3>
+              <p>Practice dosage math — choose what to solve for and which units to use.</p>
+              <div class="calc-grid">
+                <label>Solve for
+                  <select data-health-solve>
+                    <option value="dose">Dose (mg)</option>
+                    <option value="rate">Dose rate (mg/kg)</option>
+                    <option value="weight">Weight</option>
+                  </select>
+                </label>
+                <label>Measurement system
+                  <select data-health-system>
+                    <option value="metric">Metric (kg)</option>
+                    <option value="imperial">Imperial (lb)</option>
+                  </select>
+                </label>
+                <label>Weight<input type="number" min="0" step="0.1" value="55" data-health-weight /></label>
+                <label>Dose rate<input type="number" min="0" step="0.1" value="2" data-health-rate /></label>
+                <label>Dose (mg)<input type="number" min="0" step="0.1" value="110" data-health-dose /></label>
+              </div>
+              <p class="source-note" data-health-note></p>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          apps: `
+            <div class="playground-widget">
+              <h3>Apps & games</h3>
+              <p>Track screen time, game performance, or XP pacing with a single tool.</p>
+              <div class="calc-grid">
+                <label>Use case
+                  <select data-apps-mode>
+                    <option value="screen">Screen time</option>
+                    <option value="games">Win rate</option>
+                    <option value="xp">XP pace</option>
+                  </select>
+                </label>
+              </div>
+              <div data-apps-fields></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          travel: `
+            <div class="playground-widget">
+              <h3>Travel & timing</h3>
+              <p>Compare road trips, flights, hotels, and currency conversions.</p>
+              <div class="calc-grid">
+                <label>Use case
+                  <select data-travel-mode>
+                    <option value="road">Road trip</option>
+                    <option value="flight">Flight comparison</option>
+                    <option value="hotel">Hotel comparison</option>
+                    <option value="currency">Currency conversion</option>
+                  </select>
+                </label>
+              </div>
+              <div data-travel-fields></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          cooking: `
+            <div class="playground-widget">
+              <h3>Cooking & recipes</h3>
+              <p>Scale recipes, convert kitchen units, or switch between Celsius and Fahrenheit.</p>
+              <div class="calc-grid">
+                <label>Use case
+                  <select data-cooking-mode>
+                    <option value="scale">Scale recipe</option>
+                    <option value="convert">Convert units</option>
+                    <option value="temperature">Temperature</option>
+                  </select>
+                </label>
+              </div>
+              <div data-cooking-fields></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          bills: `
+            <div class="playground-widget">
+              <h3>Bills & subscriptions</h3>
+              <p>Track subscriptions and see how credit-card debt snowballs over time.</p>
+              <div class="calc-grid">
+                <label>Use case
+                  <select data-bills-mode>
+                    <option value="subscriptions">Subscriptions</option>
+                    <option value="debt">Credit card debt</option>
+                  </select>
+                </label>
+              </div>
+              <div data-bills-fields></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+          investment: `
+            <div class="playground-widget">
+              <h3>Investment & growth</h3>
+              <p>Compare basic growth, dividends, and Sharpe ratio risk-adjusted return.</p>
+              <div class="calc-grid">
+                <label>Use case
+                  <select data-invest-mode>
+                    <option value="basic">Basic growth</option>
+                    <option value="dividends">Dividends</option>
+                    <option value="sharpe">Sharpe ratio</option>
+                  </select>
+                </label>
+              </div>
+              <div data-invest-fields></div>
+              <div class="calc-output" data-playground-output></div>
+            </div>
+          `,
+        };
+
+        const updateWidget = (key) => {
+          const output = body.querySelector("[data-playground-output]");
+          if (!output) {
+            return;
+          }
+
+          if (key === "shopping") {
+            renderShoppingAisle(body);
+            const budget = getNumber(body, "[data-shop-budget]");
+            const shoppers = Math.max(getNumber(body, "[data-shop-shoppers]"), 1);
+            let total = 0;
+            let bestTotal = 0;
+            let biggestSwap = null;
+            const lines = [];
+
+            groceryCatalog.forEach((item) => {
+              const selectedIndex = Number(body.querySelector(`[data-grocery-brand="${item.id}"]`)?.value) || 0;
+              const quantity = Math.max(Number(body.querySelector(`[data-grocery-qty="${item.id}"]`)?.value) || 0, 0);
+              const selected = item.options[selectedIndex] || item.options[0];
+              const lineTotal = selected.price * quantity;
+              const cheapest = item.options.reduce((lowest, option) => (option.price < lowest.price ? option : lowest), item.options[0]);
+              const bestLineTotal = cheapest.price * quantity;
+              total += lineTotal;
+              bestTotal += bestLineTotal;
+              lines.push(`${item.name}: ${selected.brand} x${quantity} = ${money(lineTotal)}`);
+              const savings = lineTotal - bestLineTotal;
+              if (savings > 0 && (!biggestSwap || savings > biggestSwap.savings)) {
+                biggestSwap = { name: item.name, brand: cheapest.brand, savings };
+              }
+            });
+
+            const balance = budget - total;
+            const meter = body.querySelector("[data-shop-meter]");
+            const summary = body.querySelector("[data-shop-summary]");
+            const ratio = budget > 0 ? Math.min((total / budget) * 100, 140) : 0;
+            if (meter) {
+              meter.style.width = `${Math.min(ratio, 100)}%`;
+              meter.dataset.state = balance >= 0 ? "under" : "over";
+            }
+            if (summary) {
+              summary.textContent = `Challenge total: ${money(total)} out of ${money(budget)}. Best-possible cart with these quantities: ${money(bestTotal)}.`;
+            }
+            output.textContent = `${balance >= 0 ? `You beat the budget by ${money(balance)}.` : `You went over by ${money(Math.abs(balance))}.`} ${balance >= 0 ? "Keep tightening choices to win with a smaller cushion." : "Try cheaper brands or smaller quantities to get back under."} Divided by ${shoppers} shoppers, that's ${money(total / shoppers)} each.${biggestSwap ? ` Cheapest swap available: ${biggestSwap.name} to ${biggestSwap.brand} saves ${money(biggestSwap.savings)}.` : ""}`;
+            return;
+          }
+
+          if (key === "sports") {
+            const sport = body.querySelector("[data-sports-sport]")?.value || "basketball";
+            const profile = sportsProfiles[sport] || sportsProfiles.basketball;
+            renderSportsProfile(body, sport);
+            const rawTotal = String(body.querySelector("[data-sports-total]")?.value || "").replace(/,/g, "").trim();
+            const totalStat = Number(rawTotal) || 0;
+            const played = Math.max(Number(body.querySelector("[data-sports-played]")?.value) || 1, 1);
+            const left = Math.max(Number(body.querySelector("[data-sports-left]")?.value) || 0, 0);
+            const pace = totalStat / played;
+            const projected = pace * (played + left);
+            const difference = pace - profile.benchmark;
+            // Ensure the input shows a helpful example and placeholder
+            const totalInput = body.querySelector("[data-sports-total]");
+            if (totalInput && !totalInput.placeholder) {
+              totalInput.placeholder = String(profile.statValue || "");
+            }
+            output.textContent = `Your ${profile.statLabel} pace is ${pace.toFixed(2)} per game. ${profile.athlete} benchmark: ${profile.benchmark.toFixed(2)} ${profile.benchmarkLabel}. That is ${difference >= 0 ? `${difference.toFixed(2)} above` : `${Math.abs(difference).toFixed(2)} below`} the reference. If you keep the pace for ${played + left} games, you project ${projected.toFixed(0)} total.`;
+            return;
+          }
+
+          if (key === "building") {
+            const shape = body.querySelector("[data-geometry-shape]")?.value || "rectangle";
+            renderGeometryFields(body, shape);
+
+            const messages = {
+              rectangle: "Modify the rectangle by dragging its vertices or edges. GeoGebra calculates area and perimeter automatically.",
+              square: "Modify the square by dragging its vertices. Area and perimeter update in real-time.",
+              circle: "Modify the circle by dragging the radius handle or center point. Area and circumference are calculated.",
+              triangle: "Modify the triangle by dragging its vertices. Area and angles update automatically."
+            };
+            output.textContent = messages[shape] || "Interact with the shape in the geometry tool above.";
+            return;
+          }
+
+          if (key === "health") {
+            const system = body.querySelector("[data-health-system]")?.value || "metric";
+            const solveFor = body.querySelector("[data-health-solve]")?.value || "dose";
+            const weightInput = body.querySelector("[data-health-weight]");
+            const rateInput = body.querySelector("[data-health-rate]");
+            const doseInput = body.querySelector("[data-health-dose]");
+            const weight = Number(weightInput?.value) || 0;
+            const rate = Number(rateInput?.value) || 0;
+            const dose = Number(doseInput?.value) || 0;
+            const unitLabel = system === "imperial" ? "lb" : "kg";
+            const rateLabel = system === "imperial" ? "mg per lb" : "mg per kg";
+            const note = body.querySelector("[data-health-note]");
+            if (note) note.textContent = `Using ${unitLabel} and ${rateLabel}.`;
+
+            // conversion helpers
+            const lbToKg = (v) => v * 0.45359237;
+            const kgToLb = (v) => v / 0.45359237;
+
+            if (solveFor === "dose") {
+              // dose = weight_in_kg * rate_mg_per_kg
+              const weightKg = system === "imperial" ? lbToKg(weight) : weight;
+              const calcDose = weightKg * rate;
+              if (doseInput) doseInput.value = calcDose.toFixed(1);
+              output.textContent = `Dose: ${calcDose.toFixed(1)} mg (${rate.toFixed(2)} ${rateLabel} × ${weight.toFixed(1)} ${unitLabel}).`;
+              return;
+            }
+
+            if (solveFor === "rate") {
+              // rate = dose / weight_in_kg
+              const weightKg = system === "imperial" ? lbToKg(weight) : weight;
+              const calcRate = weightKg > 0 ? dose / weightKg : 0;
+              if (rateInput) rateInput.value = calcRate.toFixed(2);
+              output.textContent = `Dose rate: ${calcRate.toFixed(2)} mg/kg (based on ${dose.toFixed(1)} mg and ${weight.toFixed(1)} ${unitLabel}).`;
+              return;
+            }
+
+            // solveFor === 'weight'
+            // weight = dose / rate (in kg) -> convert to selected unit
+            const weightKgFromDose = rate > 0 ? dose / rate : 0;
+            const weightResult = system === "imperial" ? kgToLb(weightKgFromDose) : weightKgFromDose;
+            if (weightInput) weightInput.value = weightResult.toFixed(2);
+            output.textContent = `Weight: ${weightResult.toFixed(2)} ${unitLabel} (derived from ${dose.toFixed(1)} mg at ${rate.toFixed(2)} mg/kg).`;
+            return;
+          }
+
+          if (key === "apps") {
+            const mode = body.querySelector("[data-apps-mode]")?.value || "screen";
+            renderModeMarkup(body, "[data-apps-fields]", appGameModes, mode, "[data-apps-mode]");
+
+            if (mode === "screen") {
+              const minutesInput = body.querySelector("[data-apps-minutes]");
+              const daysInput = body.querySelector("[data-apps-days]");
+              const rawMinutes = Math.round(Number(minutesInput?.value) || 0);
+              const rawDays = Math.round(Number(daysInput?.value) || 0);
+              const minutes = Math.min(Math.max(rawMinutes, 0), 1440);
+              const days = Math.min(Math.max(rawDays, 0), 7);
+              if (minutesInput && rawMinutes !== minutes) minutesInput.value = String(minutes);
+              if (daysInput && rawDays !== days) daysInput.value = String(days);
+              const weeklyMinutes = minutes * days;
+              const weeklyHours = weeklyMinutes / 60;
+              const percentOfWeek = (weeklyMinutes / (7 * 24 * 60)) * 100;
+              output.textContent = `${weeklyHours.toFixed(1)} hours per week, which is ${percentOfWeek.toFixed(1)}% of the week.`;
+              return;
+            }
+
+            if (mode === "games") {
+              const wins = Math.max(readNumber(body, "[data-apps-wins]"), 0);
+              const played = Math.max(readNumber(body, "[data-apps-played]", 1), 1);
+              const left = Math.max(readNumber(body, "[data-apps-left]"), 0);
+              const winRate = (wins / played) * 100;
+              const projectedWins = (wins / played) * (played + left);
+              output.textContent = `Win rate: ${winRate.toFixed(1)}%. Projected wins if that pace continues: ${projectedWins.toFixed(1)} over ${played + left} games.`;
+              return;
+            }
+
+            const xp = Math.max(readNumber(body, "[data-apps-xp]"), 0);
+            const sessions = Math.max(readNumber(body, "[data-apps-sessions]", 1), 1);
+            const sessionsLeft = Math.max(readNumber(body, "[data-apps-xp-left]"), 0);
+            const xpPerSession = xp / sessions;
+            const projectedXp = xpPerSession * (sessions + sessionsLeft);
+            output.textContent = `XP pace: ${xpPerSession.toFixed(1)} per session. Projected total: ${projectedXp.toFixed(0)} XP.`;
+            return;
+          }
+
+          if (key === "travel") {
+            const mode = body.querySelector("[data-travel-mode]")?.value || "road";
+            renderModeMarkup(body, "[data-travel-fields]", travelModes, mode, "[data-travel-mode]");
+
+            if (mode === "road") {
+              const distance = readNumber(body, "[data-travel-distance]");
+              const speed = Math.max(readNumber(body, "[data-travel-speed]", 1), 1);
+              const stops = readNumber(body, "[data-travel-stops]");
+              const totalMinutes = Math.round(((distance / speed) + stops / 60) * 60);
+              const hours = Math.floor(totalMinutes / 60);
+              const minutes = totalMinutes % 60;
+              output.textContent = `Estimated trip time: ${hours}h ${minutes}m total, including stops.`;
+              return;
+            }
+
+            if (mode === "flight") {
+              const fare1 = readNumber(body, "[data-flight1-fare]");
+              const bags1 = readNumber(body, "[data-flight1-bags]");
+              const layover1 = readNumber(body, "[data-flight1-layover]");
+              const fare2 = readNumber(body, "[data-flight2-fare]");
+              const bags2 = readNumber(body, "[data-flight2-bags]");
+              const layover2 = readNumber(body, "[data-flight2-layover]");
+              const bagFee = readNumber(body, "[data-flight-bag-fee]");
+              const distance = readNumber(body, "[data-flight-distance]");
+              const speed = Math.max(readNumber(body, "[data-flight-speed]", 1), 1);
+              const flightMinutes = (distance / speed) * 60;
+              const total1 = fare1 + bags1 * bagFee;
+              const total2 = fare2 + bags2 * bagFee;
+              const time1 = flightMinutes + layover1;
+              const time2 = flightMinutes + layover2;
+              const winner = total1 === total2 ? "They cost the same." : total1 < total2 ? "Flight 1 is cheaper." : "Flight 2 is cheaper.";
+              output.textContent = `Flight 1: ${money(total1)} and about ${(time1 / 60).toFixed(1)} hours. Flight 2: ${money(total2)} and about ${(time2 / 60).toFixed(1)} hours. ${winner}`;
+              return;
+            }
+
+            if (mode === "hotel") {
+              const nights = Math.max(readNumber(body, "[data-hotel-nights]", 1), 1);
+              const aTotal = (readNumber(body, "[data-hotel-a-rate]") + readNumber(body, "[data-hotel-a-fees]")) * nights;
+              const bTotal = (readNumber(body, "[data-hotel-b-rate]") + readNumber(body, "[data-hotel-b-fees]")) * nights;
+              output.textContent = `Hotel A total: ${money(aTotal)}. Hotel B total: ${money(bTotal)}. ${aTotal === bTotal ? "They match." : aTotal < bTotal ? "Hotel A is cheaper." : "Hotel B is cheaper."}`;
+              return;
+            }
+
+            const amount = readNumber(body, "[data-currency-amount]");
+            const rate = readNumber(body, "[data-currency-rate]");
+            const fee = readNumber(body, "[data-currency-fee]");
+            const converted = amount * rate - fee;
+            output.textContent = `Converted value: ${money(converted)} after a ${money(fee)} fee.`;
+            return;
+          }
+
+          if (key === "cooking") {
+            const mode = body.querySelector("[data-cooking-mode]")?.value || "scale";
+            renderModeMarkup(body, "[data-cooking-fields]", cookingModes, mode, "[data-cooking-mode]");
+
+            if (mode === "scale") {
+              const originalServings = Math.max(readNumber(body, "[data-cooking-original]", 1), 1);
+              const targetServings = Math.max(readNumber(body, "[data-cooking-target]", 1), 1);
+              const scale = targetServings / originalServings;
+              const flour = readNumber(body, "[data-cooking-flour]") * scale;
+              const milk = readNumber(body, "[data-cooking-milk]") * scale;
+              const sugar = readNumber(body, "[data-cooking-sugar]") * scale;
+              output.textContent = `Scale factor: ${scale.toFixed(2)}x. New amounts: ${flour.toFixed(2)} cups flour, ${milk.toFixed(2)} cups milk, ${sugar.toFixed(2)} cups sugar.`;
+              return;
+            }
+
+            if (mode === "convert") {
+              const cups = readNumber(body, "[data-cooking-cups]");
+              const tbspPerCup = Math.max(readNumber(body, "[data-cooking-tbsp-per-cup]", 16), 1);
+              const tspPerTbsp = Math.max(readNumber(body, "[data-cooking-tsp-per-tbsp]", 3), 1);
+              const tablespoons = cups * tbspPerCup;
+              const teaspoons = tablespoons * tspPerTbsp;
+              output.textContent = `${cups.toFixed(1)} cups = ${tablespoons.toFixed(1)} tablespoons = ${teaspoons.toFixed(1)} teaspoons.`;
+              return;
+            }
+
+            const celsius = readNumber(body, "[data-cooking-celsius]");
+            const fahrenheit = readNumber(body, "[data-cooking-fahrenheit]");
+            const cToF = (celsius * 9) / 5 + 32;
+            const fToC = ((fahrenheit - 32) * 5) / 9;
+            output.textContent = `${celsius.toFixed(1)}°C = ${cToF.toFixed(1)}°F. ${fahrenheit.toFixed(1)}°F = ${fToC.toFixed(1)}°C.`;
+            return;
+          }
+
+          if (key === "bills") {
+            const mode = body.querySelector("[data-bills-mode]")?.value || "subscriptions";
+            renderModeMarkup(body, "[data-bills-fields]", billModes, mode, "[data-bills-mode]");
+
+            if (mode === "subscriptions") {
+              const monthly = [1, 2, 3, 4].reduce((sum, index) => sum + readNumber(body, `[data-subscription-${index}]`), 0);
+              output.textContent = `Monthly subscriptions: ${money(monthly)}. Yearly total: ${money(monthly * 12)}.`;
+              return;
+            }
+
+            const borrowed = readNumber(body, "[data-debt-balance]");
+            const apr = readNumber(body, "[data-debt-apr]");
+            const minPayment = readNumber(body, "[data-debt-min]");
+            const extraPayment = readNumber(body, "[data-debt-extra]");
+            const monthlyRate = apr / 1200;
+            const payment = minPayment + extraPayment;
+            let remaining = borrowed;
+            let totalPaid = 0;
+            let totalInterest = 0;
+            let months = 0;
+
+            while (remaining > 0 && months < 600) {
+              const interest = remaining * monthlyRate;
+              const amountDue = remaining + interest;
+              const actualPayment = Math.min(payment, amountDue);
+              const principalPaid = Math.max(actualPayment - interest, 0);
+              totalInterest += interest;
+              totalPaid += actualPayment;
+              remaining = Math.max(remaining + interest - actualPayment, 0);
+              months += 1;
+
+              if (remaining <= 0) {
+                break;
+              }
+
+              if (principalPaid <= 0 && payment <= interest) {
+                break;
+              }
+            }
+
+            const payoffNote = remaining > 0 ? `At this payment, the balance does not fully pay off within ${months} months.` : `It takes ${months} months to pay off.`;
+            output.textContent = `Borrowed: ${money(borrowed)}. Total paid: ${money(totalPaid)}. Interest paid: ${money(totalInterest)}. ${payoffNote}`;
+            return;
+          }
+
+          if (key === "investment") {
+            const mode = body.querySelector("[data-invest-mode]")?.value || "basic";
+            renderModeMarkup(body, "[data-invest-fields]", investmentModes, mode, "[data-invest-mode]");
+
+            if (mode === "basic") {
+              const principal = readNumber(body, "[data-invest-principal]");
+              const contribution = readNumber(body, "[data-invest-contribution]");
+              const rate = readNumber(body, "[data-invest-rate]");
+              const years = readNumber(body, "[data-invest-years]");
+              const monthlyRate = rate / 1200;
+              const periods = Math.round(years * 12);
+              const futurePrincipal = principal * Math.pow(1 + monthlyRate, periods);
+              const futureContributions = monthlyRate === 0 ? contribution * periods : contribution * ((Math.pow(1 + monthlyRate, periods) - 1) / monthlyRate);
+              const future = futurePrincipal + futureContributions;
+              output.textContent = `Future value: ${money(future)}. Total contributed: ${money(principal + contribution * periods)}.`;
+              return;
+            }
+
+            if (mode === "sharpe") {
+              const expectedReturn = readNumber(body, "[data-invest-return]");
+              const riskFree = readNumber(body, "[data-invest-riskfree]");
+              const volatility = Math.max(readNumber(body, "[data-invest-volatility]", 1), 0.1);
+              const sharpe = (expectedReturn - riskFree) / volatility;
+              output.textContent = `Sharpe ratio: ${sharpe.toFixed(2)}. It measures expected excess return per unit of risk.`;
+              return;
+            }
+
+            const investment = readNumber(body, "[data-div-investment]");
+            const growth = readNumber(body, "[data-div-growth]");
+            const dividendYield = readNumber(body, "[data-div-yield]");
+            const years = readNumber(body, "[data-div-years]");
+            const pureGrowth = investment * Math.pow(1 + growth / 100, years);
+            const withDividends = investment * Math.pow(1 + (growth + dividendYield) / 100, years);
+            output.textContent = `Without dividends: ${money(pureGrowth)}. With dividends reinvested: ${money(withDividends)}. Dividend lift: ${money(withDividends - pureGrowth)}.`;
+            return;
+          }
+        };
+
+        const render = (key) => {
+          body.innerHTML = widgets[key];
+          buttons.forEach((button) => {
+            button.classList.toggle("active", button.dataset.playgroundDemo === key);
+            button.setAttribute("aria-pressed", String(button.dataset.playgroundDemo === key));
+          });
+          updateWidget(key);
+        };
+
+        body.addEventListener("input", () => {
+          const active = buttons.find((button) => button.classList.contains("active"));
+          if (active) {
+            updateWidget(active.dataset.playgroundDemo);
+          }
+        });
+
+        // Ensure geometry shape selector triggers updates immediately
+        body.addEventListener("change", (e) => {
+          if (e.target && e.target.matches && e.target.matches('[data-geometry-shape]')) {
+            const active = buttons.find((button) => button.classList.contains("active"));
+            if (active) updateWidget(active.dataset.playgroundDemo);
+          }
+        });
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => render(button.dataset.playgroundDemo));
+        });
+
+        render("shopping");
+      })();
+    </script>
+    <script>
+      (function () {
+        const questionInputs = Array.from(document.querySelectorAll("[data-question-answer]"));
+        const discoverQuestions = Array.from(document.querySelectorAll("[data-discover-step]"));
+        const discoverPrevButton = document.querySelector("[data-discover-prev]");
+        const discoverNextButton = document.querySelector("[data-discover-next]");
+        const courseInputs = Array.from(document.querySelectorAll("[data-pathway-course]"));
+        const modeButtons = Array.from(document.querySelectorAll("[data-reco-mode]"));
+        const modePanels = Array.from(document.querySelectorAll("[data-mode-panel]"));
+        const discoverPanel = document.querySelector('[data-mode-panel="discover"]');
+        const prebuiltPanel = document.querySelector('[data-mode-panel="prebuilt"]');
+        const clusterTitle = document.querySelector("[data-cluster-title]");
+        const clusterSummary = document.querySelector("[data-cluster-summary]");
+        const clusterTasks = document.querySelector("[data-cluster-tasks]");
+        const clusterSkills = document.querySelector("[data-cluster-skills]");
+        const clusterCourses = document.querySelector("[data-cluster-courses]");
+        const pathSummary = document.querySelector("[data-path-summary]");
+        const pathProgress = document.querySelector("[data-path-progress]");
+        const pathGrades = Array.from(document.querySelectorAll("[data-path-grade]"));
+        const questionLabel = document.querySelector("[data-discover-step-label]");
+        let currentStep = 1;
+
+        const clusterProfiles = {
+          stem: {
+            title: "STEM and Engineering",
+            summary: "Best match for systems thinking, data, and technical problem solving.",
+            tasks: ["Model systems", "Test technical ideas", "Interpret data and patterns"],
+            skills: ["Algebra and functions", "Data analysis", "Precision and logic"],
+            courses: ["Pre-Calculus", "AP Calculus AB/BC", "Statistics", "Computer Science Math"],
+          },
+          health: {
+            title: "Health and Medical Services",
+            summary: "Best match for evidence-based decisions and people-centered work.",
+            tasks: ["Read health data", "Calculate dosage or risk", "Compare outcomes"],
+            skills: ["Statistics", "Ratios and percentages", "Graph interpretation"],
+            courses: ["Statistics", "Applied Math", "Quantitative Reasoning", "Medical Math"],
+          },
+          business: {
+            title: "Business and Finance",
+            summary: "Best match for budgeting, forecasting, and strategic planning.",
+            tasks: ["Build budgets", "Compare costs and benefits", "Forecast risk"],
+            skills: ["Financial math", "Interest and growth", "Decision tradeoffs"],
+            courses: ["Financial Math", "Statistics", "Consumer Finance", "Accounting Math"],
+          },
+          trades: {
+            title: "Trades and Technical Fields",
+            summary: "Best match for hands-on precision and practical problem solving.",
+            tasks: ["Measure materials", "Read blueprints", "Solve step-by-step problems"],
+            skills: ["Geometry", "Unit conversion", "Applied algebra"],
+            courses: ["Geometry", "Technical Math", "Algebra II", "Blueprint Math"],
+          },
+          social: {
+            title: "Social Science and Communication",
+            summary: "Best match for people-focused work that uses data and clear reasoning.",
+            tasks: ["Evaluate survey data", "Communicate evidence", "Support decisions"],
+            skills: ["Data literacy", "Trend analysis", "Evidence-based argument"],
+            courses: ["Statistics", "Data Literacy", "Quantitative Reasoning", "Economics Math"],
+          },
+          creative: {
+            title: "Creative and Design Fields",
+            summary: "Best match for expressive work that still uses structure and math.",
+            tasks: ["Design products or media", "Use audience data", "Plan projects and budgets"],
+            skills: ["Scale and proportion", "Design decisions", "Project planning"],
+            courses: ["Geometry", "Statistics", "Consumer Finance", "Data Literacy"],
+          },
+        };
+
+        const questionWeights = {
+          workStyle: {
+            trades: { trades: 4, stem: 1 },
+            stem: { stem: 4, business: 1 },
+            health: { health: 4, social: 2 },
+            creative: { creative: 4, social: 1 },
+          },
+          solveStyle: {
+            stem: { stem: 4, business: 1 },
+            trades: { trades: 4, creative: 1 },
+            social: { social: 4, health: 1 },
+            business: { business: 4, stem: 1 },
+          },
+          classStrength: {
+            stem: { stem: 4 },
+            health: { health: 4, social: 1 },
+            trades: { trades: 4, creative: 1 },
+            creative: { creative: 4, social: 1 },
+          },
+          teamRole: {
+            business: { business: 4, stem: 1 },
+            trades: { trades: 4 },
+            health: { health: 3, social: 1 },
+            creative: { creative: 4 },
+          },
+          projectType: {
+            stem: { stem: 4, creative: 1 },
+            business: { business: 4 },
+            health: { health: 4, social: 1 },
+            trades: { trades: 4 },
+            social: { social: 4, creative: 1 },
+          },
+          futureGoal: {
+            stem: { stem: 5 },
+            health: { health: 5 },
+            business: { business: 5 },
+            trades: { trades: 5 },
+            social: { social: 5 },
+            creative: { creative: 5 },
+          },
+        };
+
+        const courseWeights = {
+          algebra1: { stem: 1, business: 1 },
+          geometry: { trades: 2, creative: 1, stem: 1 },
+          algebra2: { stem: 2, business: 1 },
+          precalc: { stem: 3 },
+          stats: { health: 2, business: 2, social: 1, creative: 1 },
+          apcalcab: { stem: 4 },
+          apcalcbc: { stem: 5 },
+          collegecalc3: { stem: 5 },
+          linear: { stem: 4 },
+        };
+
+        const updateList = (element, items) => {
+          if (!element) {
+            return;
+          }
+          element.innerHTML = "";
+          items.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            element.appendChild(li);
+          });
+        };
+
+        const getScores = () => {
+          const scores = {
+            stem: 0,
+            health: 0,
+            business: 0,
+            trades: 0,
+            social: 0,
+            creative: 0,
+          };
+
+          questionInputs.forEach((input) => {
+            if (!input.value) {
+              return;
+            }
+            const mapping = questionWeights[input.dataset.questionAnswer]?.[input.value];
+            if (!mapping) {
+              return;
+            }
+            Object.entries(mapping).forEach(([cluster, weight]) => {
+              scores[cluster] += weight;
+            });
+          });
+
+          courseInputs.forEach((input) => {
+            if (!input.checked) {
+              return;
+            }
+            const mapping = courseWeights[input.value];
+            if (!mapping) {
+              return;
+            }
+            Object.entries(mapping).forEach(([cluster, weight]) => {
+              scores[cluster] += weight;
+            });
+          });
+
+          return scores;
+        };
+
+        const updateRecommendation = () => {
+          const scores = getScores();
+          const totalPoints = Object.values(scores).reduce((sum, value) => sum + value, 0);
+          const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+          const [topCluster, topScore] = ranked[0];
+          const [secondCluster, secondScore] = ranked[1];
+          const answeredCount = questionInputs.filter((input) => input.value).length;
+          const selectedCourses = courseInputs.filter((input) => input.checked).length;
+          const profile = clusterProfiles[topCluster];
+          const fitScore = totalPoints > 0 ? Math.round((topScore / totalPoints) * 100) : 0;
+
+          if (pathProgress) {
+            pathProgress.style.width = `${Math.min(100, (answeredCount / questionInputs.length) * 100)}%`;
+          }
+
+          if (pathGrades.length) {
+            pathGrades.forEach((element) => {
+              element.textContent = totalPoints > 0 ? `${fitScore}%` : "0";
+            });
+          }
+
+          if (answeredCount < questionInputs.length) {
+            if (pathSummary) {
+              pathSummary.textContent = `Answer ${questionInputs.length - answeredCount} more question(s) for a reliable match.`;
+            }
+            if (clusterTitle) {
+              clusterTitle.textContent = "Finish the questionnaire to see your best match";
+            }
+            if (clusterSummary) {
+              clusterSummary.textContent = "This tool only gives a reliable recommendation after all six answers are filled in.";
+            }
+            updateList(clusterTasks, []);
+            updateList(clusterSkills, []);
+            updateList(clusterCourses, []);
+            return;
+          }
+
+          if (pathSummary) {
+            pathSummary.textContent = `${profile.title} is your best match with a ${fitScore}% fit score. ${selectedCourses} course choice(s) and all six answers support this result.`;
+          }
+          if (clusterTitle) {
+            clusterTitle.textContent = profile.title;
+          }
+          if (clusterSummary) {
+            clusterSummary.textContent = `${profile.summary} Your next closest match was ${clusterProfiles[secondCluster].title} (${secondScore} points).`;
+          }
+
+          updateList(clusterTasks, profile.tasks);
+          updateList(clusterSkills, profile.skills);
+          updateList(clusterCourses, profile.courses);
+        };
+
+        const updateQuestionLabel = () => {
+          if (questionLabel) {
+            questionLabel.textContent = `Question ${currentStep} of ${discoverQuestions.length}`;
+          }
+        };
+
+        const renderQuestionStep = () => {
+          discoverQuestions.forEach((panel) => {
+            panel.classList.toggle("active", Number(panel.dataset.discoverStep) === currentStep);
+          });
+
+          if (discoverPrevButton) {
+            discoverPrevButton.disabled = currentStep === 1;
+          }
+
+          if (discoverNextButton) {
+            discoverNextButton.textContent = currentStep === discoverQuestions.length ? "See results" : "Next";
+          }
+
+          updateQuestionLabel();
+        };
+
+        const setRecoMode = (mode) => {
+          modeButtons.forEach((button) => {
+            const isActive = button.dataset.recoMode === mode;
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+          });
+
+          modePanels.forEach((panel) => {
+            panel.hidden = panel.dataset.modePanel !== mode;
+          });
+
+          if (discoverPanel) {
+            discoverPanel.hidden = mode !== "discover";
+          }
+          if (prebuiltPanel) {
+            prebuiltPanel.hidden = mode !== "prebuilt";
+          }
+        };
+
+        modeButtons.forEach((button) => {
+          button.addEventListener("click", () => setRecoMode(button.dataset.recoMode));
+        });
+
+        if (discoverPrevButton) {
+          discoverPrevButton.addEventListener("click", () => {
+            currentStep = Math.max(1, currentStep - 1);
+            renderQuestionStep();
+          });
+        }
+
+        if (discoverNextButton) {
+          discoverNextButton.addEventListener("click", () => {
+            if (currentStep < discoverQuestions.length) {
+              currentStep += 1;
+              renderQuestionStep();
+            } else {
+              updateRecommendation();
+            }
+          });
+        }
+
+        questionInputs.forEach((input) => {
+          input.addEventListener("change", () => {
+            updateQuestionLabel();
+            updateRecommendation();
+          });
+        });
+
+        courseInputs.forEach((input) => {
+          input.addEventListener("change", updateRecommendation);
+        });
+
+        updateQuestionLabel();
+        renderQuestionStep();
+        updateRecommendation();
+        setRecoMode("discover");
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four Years of Mathematical Education</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <div class="brand">Four Years of Mathematical Education</div>
+        <div class="nav-links" aria-label="Primary">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="students.html">Info</a>
+          <a href="success.html">Success</a>
+          <a href="persuasive-artifact.html">Why It Matters</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="main">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">The Hook</div>
+          <h1>Math is Bigger Than Formulas.</h1>
+          <p>
+            Math is a way of thinking that strengthens critical judgment, data
+            literacy, and informed decision-making. A national four-year high
+            school math policy builds the habits students need for college,
+            careers, and citizenship.
+          </p>
+          <div class="badge">Proposal: Four years of math for every student</div>
+          <div class="button-group">
+            <a class="button" href="students.html">Explore Info</a>
+            <a class="button secondary" href="persuasive-artifact.html">Why It Matters</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <span class="chip">Formula to real-world impact</span>
+          <div class="tile-stack">
+            <div class="tile">
+              <span class="tile-label">Complex Formula</span>
+              <div class="formula">
+                f(x) = ax^2 + bx + c → x = (-b ± √(b^2 - 4ac)) / 2a
+              </div>
+            </div>
+            <div class="tile">
+              <span class="tile-label">Solved Problem</span>
+              <strong>Choosing the smartest loan</strong>
+              <p>
+                Quadratics become decision tools: compare repayment paths,
+                reduce risk, and protect long-term goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="card journey">
+          <div>
+            <span class="eyebrow">Journey Start</span>
+            <h2>Build the math mindset.</h2>
+            <p>
+              Move through the steps to see how math shapes decisions and
+              keeps options open.
+            </p>
+            <div class="stepper" role="tablist">
+              <button type="button" data-step="observe">Observe</button>
+              <button type="button" data-step="model">Model</button>
+              <button type="button" data-step="decide">Decide</button>
+              <button type="button" data-step="explain">Explain</button>
+            </div>
+            <div class="journey-panel">
+              <h3 data-step-title></h3>
+              <p data-step-text></p>
+            </div>
+          </div>
+          <div class="slider-card">
+            <span class="eyebrow">Quick Math Moment</span>
+            <h3>What does a daily habit cost?</h3>
+            <p>
+              Slide the daily spend and see the annual impact. Small choices
+              add up.
+            </p>
+            <input
+              class="range-input"
+              type="range"
+              min="2"
+              max="12"
+              step="1"
+              value="6"
+              data-spend-range
+            />
+            <div>
+              <div class="range-output" data-spend-output></div>
+              <p data-spend-caption></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Three Audiences, One Clear Message</h2>
+        <p>
+          Each page speaks directly to a different audience while reinforcing a
+          shared, evidence-based proposal.
+        </p>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <span class="eyebrow">Students</span>
+            <h3>Interactive Infographic</h3>
+            <p>
+              See how math shows up in real careers and daily decisions with
+              clickable examples.
+            </p>
+            <a class="button secondary" href="students.html">Student View</a>
+          </div>
+          <div class="audience-card">
+            <span class="eyebrow">Parents</span>
+            <h3>Career & Success Brochure</h3>
+            <p>
+              Track pathways, test score gains, and the financial skills that
+              protect future plans.
+            </p>
+            <a class="button secondary" href="success.html">Career View</a>
+          </div>
+          <div class="audience-card">
+            <span class="eyebrow">School Board</span>
+            <h3>Implementation Brief</h3>
+            <p>
+              A concise brief with evidence, scheduling ideas, and clear
+              implementation steps.
+            </p>
+            <a class="button secondary" href="persuasive-artifact.html">Why It Matters</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        Persuasive Essay: Four Years of Mathematical Education
+      </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
