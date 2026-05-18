@@ -175,6 +175,7 @@ const stepData = {
 const stepButtons = document.querySelectorAll("[data-step]");
 const stepTitle = document.querySelector("[data-step-title]");
 const stepText = document.querySelector("[data-step-text]");
+const stepWorkspace = document.querySelector("[data-step-workspace]");
 
 if (stepButtons.length && stepTitle && stepText) {
   const setStep = (key) => {
@@ -183,14 +184,134 @@ if (stepButtons.length && stepTitle && stepText) {
     });
     stepTitle.textContent = stepData[key].title;
     stepText.textContent = stepData[key].text;
+    setTimeout(() => {
+      try {
+        if (typeof renderStepWorkspace === "function") renderStepWorkspace(key);
+      } catch (e) {
+        /* safe no-op if renderer not ready */
+      }
+    }, 0);
   };
 
   stepButtons.forEach((button) => {
     button.addEventListener("click", () => setStep(button.dataset.step));
   });
 
-  setStep("observe");
+  setTimeout(() => setStep("observe"), 0);
 }
+
+const stepState = {};
+
+const renderStepWorkspace = (key) => {
+  if (!stepWorkspace) return;
+  stepWorkspace.innerHTML = "";
+
+  const mk = (html) => {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = html;
+    return wrapper;
+  };
+
+  if (key === "observe") {
+    const node = mk(`
+      <label>Quick notes or numbers<textarea data-observe-input rows="3" placeholder="Type observations, numbers, or facts"></textarea></label>
+      <div><button data-observe-run>Analyze</button></div>
+      <pre class="observe-output" data-observe-output aria-live="polite"></pre>
+    `);
+
+    node.querySelector("[data-observe-run]").addEventListener("click", () => {
+      const text = node.querySelector("[data-observe-input]").value || "";
+      const nums = (text.match(/-?\d+(?:\.\d+)?/g) || []).map(Number);
+      const words = text.trim().length ? text.trim().split(/\s+/).length : 0;
+      const sum = nums.reduce((a, b) => a + b, 0);
+      const avg = nums.length ? sum / nums.length : 0;
+      const out = [];
+      out.push(`Words: ${words}`);
+      out.push(`Numbers found: ${nums.length}`);
+      if (nums.length) out.push(`Min: ${Math.min(...nums)}, Max: ${Math.max(...nums)}, Avg: ${avg.toFixed(2)}, Sum: ${sum}`);
+      node.querySelector(".observe-output").textContent = out.join("\n");
+      stepState.observe = { text, nums, sum, avg };
+    });
+
+    stepWorkspace.appendChild(node);
+  }
+
+  if (key === "model") {
+    const node = mk(`
+      <label>Model type<select data-model-type>
+        <option value="linear">Linear (add)</option>
+        <option value="growth">Growth (%)</option>
+      </select></label>
+      <label>Start value<input type="number" data-model-start value="10" /></label>
+      <label>Rate (add amount or percent)<input type="number" data-model-rate value="5" /></label>
+      <label>Steps<input type="number" data-model-steps value="6" min="1" /></label>
+      <div><button data-model-run>Run model</button></div>
+      <pre class="model-output" data-model-output aria-live="polite"></pre>
+    `);
+
+    node.querySelector("[data-model-run]").addEventListener("click", () => {
+      const type = node.querySelector("[data-model-type]").value;
+      let val = Number(node.querySelector("[data-model-start]").value) || 0;
+      const rate = Number(node.querySelector("[data-model-rate]").value) || 0;
+      const steps = Math.max(1, Math.floor(Number(node.querySelector("[data-model-steps]").value) || 1));
+      const series = [val];
+      for (let i = 1; i <= steps; i++) {
+        if (type === "linear") val = val + rate;
+        else val = val * (1 + rate / 100);
+        series.push(Number(val.toFixed(2)));
+      }
+      node.querySelector(".model-output").textContent = `Series: ${series.join(", ")}\nFinal: ${series[series.length-1]}`;
+      stepState.model = { type, series };
+    });
+
+    stepWorkspace.appendChild(node);
+  }
+
+  if (key === "decide") {
+    const node = mk(`
+      <label>Option A value<input type="number" data-decide-a value="100" /></label>
+      <label>Option B value<input type="number" data-decide-b value="120" /></label>
+      <label>Weight (higher means more important)<input type="number" data-decide-weight value="1" step="0.1" /></label>
+      <div><button data-decide-run>Compare</button></div>
+      <pre class="decide-output" data-decide-output aria-live="polite"></pre>
+    `);
+
+    node.querySelector("[data-decide-run]").addEventListener("click", () => {
+      const a = Number(node.querySelector("[data-decide-a]").value) || 0;
+      const b = Number(node.querySelector("[data-decide-b]").value) || 0;
+      const w = Number(node.querySelector("[data-decide-weight]").value) || 1;
+      // Simple decision: lower cost wins after applying weight to difference
+      const scoreA = a;
+      const scoreB = b / w;
+      const winner = scoreA === scoreB ? "Tie" : (scoreA < scoreB ? "Option A" : "Option B");
+      node.querySelector(".decide-output").textContent = `Option A: ${scoreA}\nOption B (weighted): ${scoreB.toFixed(2)}\nRecommended: ${winner}`;
+      stepState.decide = { a, b, weight: w, winner };
+    });
+
+    stepWorkspace.appendChild(node);
+  }
+
+  if (key === "explain") {
+    const node = mk(`
+      <label>Decision summary<textarea data-explain-input rows="3" placeholder="Summarize your decision or paste results"></textarea></label>
+      <div><button data-explain-run>Generate explanation</button></div>
+      <pre class="explain-output" data-explain-output aria-live="polite"></pre>
+    `);
+
+    node.querySelector("[data-explain-run]").addEventListener("click", () => {
+      const text = node.querySelector("[data-explain-input]").value || "";
+      const parts = [];
+      if (stepState.observe) parts.push(`Observed ${stepState.observe.nums?.length || 0} numbers, avg ${stepState.observe.avg?.toFixed(2) || "N/A"}`);
+      if (stepState.model) parts.push(`Modeled ${stepState.model.type}, final ${stepState.model.series?.slice(-1)[0]}`);
+      if (stepState.decide) parts.push(`Decision: ${stepState.decide.winner}`);
+      if (text) parts.push(`User: ${text}`);
+      const explanation = parts.length ? parts.join("; ") : "Provide inputs in previous steps to build an explanation.";
+      node.querySelector(".explain-output").textContent = explanation;
+    });
+
+    stepWorkspace.appendChild(node);
+  }
+};
 
 const spendRange = document.querySelector("[data-spend-range]");
 const spendOutput = document.querySelector("[data-spend-output]");
@@ -199,9 +320,21 @@ const spendCaption = document.querySelector("[data-spend-caption]");
 if (spendRange && spendOutput && spendCaption) {
   const updateSpend = () => {
     const daily = Number(spendRange.value);
+    const weekly = daily * 7;
+    const monthly = daily * 30;
     const annual = daily * 365;
-    spendOutput.textContent = `$${annual.toLocaleString()}`;
-    spendCaption.textContent = `About $${daily}/day equals $${annual.toLocaleString()} each year.`;
+    const tenYear = annual * 10;
+    const fortyYear = annual * 40;
+
+    // Investment comparison: if you invested the daily amount each month at 6% annual
+    const monthlyContribution = daily * 30;
+    const annualRate = 0.06;
+    const monthlyRate = annualRate / 12;
+    const periods40 = 40 * 12;
+    const future40 = monthlyContribution * ((Math.pow(1 + monthlyRate, periods40) - 1) / monthlyRate);
+
+    spendOutput.textContent = `Daily: $${daily.toLocaleString()} · Weekly: $${weekly.toLocaleString()} · Monthly: $${monthly.toLocaleString()} · Year: $${annual.toLocaleString()}`;
+    spendCaption.textContent = `Over 10 years: $${tenYear.toLocaleString()} · Over 40 years: $${fortyYear.toLocaleString()}. If you instead saved about $${monthlyContribution.toLocaleString()} per month at 6% interest for 40 years, you'd have approximately $${Math.round(future40).toLocaleString()}.`;
   };
 
   spendRange.addEventListener("input", updateSpend);
@@ -602,6 +735,10 @@ const updateClusterRecommendation = () => {
     }
     if (clusterSummary) {
       clusterSummary.textContent = "Your responses will map to a likely career cluster and aligned math classes.";
+
+    }
+
+    return;
 
   const formatMoney = (value) =>
     `$${value.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
@@ -1005,4 +1142,5 @@ if (
   }
 
   updateClusterRecommendation();
+}
 }
