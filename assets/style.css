@@ -1199,6 +1199,16 @@ p {
   background: #c8ead0;
 }
 
+/* Mark courses the student already took */
+.cluster-card ul li.course-taken {
+  background: #e6f5e8;
+  color: var(--forest);
+  border-left: 4px solid var(--forest);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
 .sources-list {
   display: grid;
   gap: 10px;

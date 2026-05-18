@@ -46,10 +46,7 @@
           <div class="meter-bar" aria-hidden="true">
             <div class="meter-fill" data-path-progress></div>
           </div>
-          <div class="stat">
-            <strong data-path-grade>0</strong>
-            <span>fit score</span>
-          </div>
+            
         </div>
       </div>
     </header>
@@ -278,10 +275,7 @@
                     We combine your open-ended responses and completed math courses.
                   </p>
                 </div>
-                <div class="flow-badge">
-                  <strong data-path-grade>0</strong>
-                  <span>fit score</span>
-                </div>
+              
               </div>
 
               <div class="cluster-grid">
@@ -309,7 +303,7 @@
             <div class="cluster-grid">
               <div class="card cluster-card">
                 <h3>STEM / Engineering</h3>
-                <p><strong>Sample careers:</strong> Software Engineer, Mechanical Engineer, Data Analyst</p>
+                  <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=Software%20Engineer" target="_blank" rel="noreferrer">Software Engineer</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Mechanical%20Engineer" target="_blank" rel="noreferrer">Mechanical Engineer</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Data%20Analyst" target="_blank" rel="noreferrer">Data Analyst</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Pre-Calculus, AP Calculus AB/BC, Statistics</p>
                 <ul>
@@ -322,7 +316,7 @@
 
               <div class="card cluster-card">
                 <h3>Health / Medical</h3>
-                <p><strong>Sample careers:</strong> Nurse, Public Health Specialist, Physical Therapist</p>
+                <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=Nurse" target="_blank" rel="noreferrer">Nurse</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Public%20Health%20Specialist" target="_blank" rel="noreferrer">Public Health Specialist</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Physical%20Therapist" target="_blank" rel="noreferrer">Physical Therapist</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Statistics, Quantitative Reasoning, Medical Math</p>
                 <ul>
@@ -335,7 +329,7 @@
 
               <div class="card cluster-card">
                 <h3>Business / Finance</h3>
-                <p><strong>Sample careers:</strong> Accountant, Entrepreneur, Financial Planner</p>
+                <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=Accountant" target="_blank" rel="noreferrer">Accountant</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Entrepreneur" target="_blank" rel="noreferrer">Entrepreneur</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Financial%20Planner" target="_blank" rel="noreferrer">Financial Planner</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Financial Math, Statistics, Consumer Finance</p>
                 <ul>
@@ -348,7 +342,7 @@
 
               <div class="card cluster-card">
                 <h3>Trades / Technical</h3>
-                <p><strong>Sample careers:</strong> Electrician, HVAC Technician, Construction Manager</p>
+                <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=Electrician" target="_blank" rel="noreferrer">Electrician</a>, <a href="https://www.bls.gov/ooh/search.htm?query=HVAC%20Technician" target="_blank" rel="noreferrer">HVAC Technician</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Construction%20Manager" target="_blank" rel="noreferrer">Construction Manager</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Technical Math, Blueprint Math, Applied Problem Solving</p>
                 <ul>
@@ -361,7 +355,7 @@
 
               <div class="card cluster-card">
                 <h3>Creative / Communication</h3>
-                <p><strong>Sample careers:</strong> UX Designer, Marketing Strategist, Journalist</p>
+                <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=UX%20Designer" target="_blank" rel="noreferrer">UX Designer</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Marketing%20Strategist" target="_blank" rel="noreferrer">Marketing Strategist</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Journalist" target="_blank" rel="noreferrer">Journalist</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Statistics, Data Literacy, Consumer Finance</p>
                 <ul>
@@ -374,7 +368,7 @@
 
               <div class="card cluster-card">
                 <h3>Social Science / Communication</h3>
-                <p><strong>Sample careers:</strong> Teacher, Lawyer, Community Organizer</p>
+                <p><strong>Sample careers:</strong> <a href="https://www.bls.gov/ooh/search.htm?query=Teacher" target="_blank" rel="noreferrer">Teacher</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Lawyer" target="_blank" rel="noreferrer">Lawyer</a>, <a href="https://www.bls.gov/ooh/search.htm?query=Community%20Organizer" target="_blank" rel="noreferrer">Community Organizer</a></p>
                 <p><strong>Required courses:</strong> Algebra I, Geometry, Algebra II</p>
                 <p><strong>Math electives:</strong> Statistics, Data Literacy, Quantitative Reasoning</p>
                 <ul>
@@ -1670,6 +1664,17 @@
           linear: { stem: 4 },
         };
 
+        // Map checkbox values to visible course labels so we can highlight taken ones
+        const courseLabelForKey = {
+          algebra1: 'Algebra I',
+          geometry: 'Geometry',
+          algebra2: 'Algebra II',
+          precalc: 'Pre-Calculus',
+          stats: 'Statistics',
+          apcalcab: 'AP Calculus AB',
+          apcalcbc: 'AP Calculus BC',
+        };
+
         const updateList = (element, items) => {
           if (!element) {
             return;
@@ -1678,6 +1683,22 @@
           items.forEach((item) => {
             const li = document.createElement("li");
             li.textContent = item;
+            element.appendChild(li);
+          });
+        };
+
+        const updateJobsList = (element, jobs) => {
+          if (!element) return;
+          element.innerHTML = "";
+          jobs.forEach((job) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            const url = `https://www.bls.gov/ooh/search.htm?query=${encodeURIComponent(job)}`;
+            a.href = url;
+            a.target = "_blank";
+            a.rel = "noreferrer noopener";
+            a.textContent = job;
+            li.appendChild(a);
             element.appendChild(li);
           });
         };
@@ -1719,7 +1740,7 @@
           const answeredCount = questionInputs.filter((input) => input.value).length;
           const selectedCourses = courseInputs.filter((input) => input.checked).length;
           const profile = clusterProfiles[topCluster];
-          const fitScore = totalPoints > 0 ? Math.round((topScore / totalPoints) * 100) : 0;
+          // Do not compute or display a percent-fit; we present the closest and next-closest clusters instead.
 
           if (pathProgress) {
             pathProgress.style.width = `${Math.min(100, (answeredCount / questionInputs.length) * 100)}%`;
@@ -1727,7 +1748,7 @@
 
           if (pathGrades.length) {
             pathGrades.forEach((element) => {
-              element.textContent = totalPoints > 0 ? `${fitScore}%` : "0";
+              element.textContent = totalPoints > 0 ? profile.title : "";
             });
           }
 
@@ -1749,19 +1770,39 @@
           }
 
           if (pathSummary) {
-            pathSummary.textContent = `${profile.title} is your best match with a ${fitScore}% fit score. ${selectedCourses} course choice(s) will be marked as complete on your plan.`;
+            pathSummary.textContent = `Closest fit: ${profile.title}. Next closest: ${clusterProfiles[secondCluster].title}. ${selectedCourses} course choice(s) will be marked as complete on your plan.`;
           }
           if (clusterTitle) {
             clusterTitle.textContent = profile.title;
           }
           if (clusterSummary) {
-            clusterSummary.textContent = `${profile.summary} Your next closest match was ${clusterProfiles[secondCluster].title} (${secondScore} points).`;
+            clusterSummary.textContent = `${profile.summary} Your next closest match was ${clusterProfiles[secondCluster].title}.`;
           }
 
           updateList(clusterTasks, profile.tasks);
           updateList(clusterSkills, profile.skills);
-          updateList(clusterCourses, profile.courses);
-          updateList(clusterJobs, profile.jobs || []);
+
+          // Render suggested classes and highlight any that match the student's checked courses
+          if (clusterCourses) {
+            clusterCourses.innerHTML = "";
+            profile.courses.forEach((courseName) => {
+              const li = document.createElement("li");
+              li.textContent = courseName;
+
+              // Check whether any checked course input corresponds to this course name
+              const taken = courseInputs.some((input) => {
+                if (!input.checked) return false;
+                const mapped = courseLabelForKey[input.value] || "";
+                if (!mapped) return false;
+                return courseName.includes(mapped) || mapped.includes(courseName) || courseName.toLowerCase().includes(mapped.toLowerCase());
+              });
+
+              if (taken) li.classList.add("course-taken");
+              clusterCourses.appendChild(li);
+            });
+          }
+
+          updateJobsList(clusterJobs, profile.jobs || []);
         };
 
         const updateQuestionLabel = () => {
